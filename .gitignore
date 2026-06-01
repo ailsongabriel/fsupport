@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+storage/logs/*
+storage/reports/*
+.vscode/
+.idea/
