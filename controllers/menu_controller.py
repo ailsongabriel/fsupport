@@ -1,15 +1,16 @@
 from views.menu_view import MenuView
 from core.utils import clear_screen
+from controllers.system_controller import SystemController
 
 class MenuController:
   
   def __init__(self):
     self.menu = MenuView()
-    self.opcoes = {
-      1:"Diagnóstico rápido",
-      2:"Diagnóstico completo",
+    self.opcoes = { # Dic para visualizacao
+      1: "Diagnóstico rápido",
+      2: "Diagnóstico completo",
       3: "Ver processos pesados",
-      4:"Ver uso de RAM",
+      4: "Ver uso de RAM",
       5: "Ver uso de CPU",
       6: "Ver uso de disco",
       7: "Ver rede",
@@ -21,9 +22,10 @@ class MenuController:
       13: "Benchmark",
       14: "Gerar relatório",
       15: "Monitoramento em tempo real",
+      16: "Informações do Sistema",
       0: "Sair"
     }
-    self.acoes = {
+    self.acoes = { # Dic para os parametros
       0: self.sair,
       1: self.diagnostico_rapido,
       2: self.diagnostico_completo,
@@ -39,7 +41,8 @@ class MenuController:
       12: self.seguranca,
       13: self.benchmark,
       14: self.relatorio,
-      15: self.monitoramento
+      15: self.monitoramento,
+      16: self.system_info
     }
 
   def iniciar(self):
@@ -131,3 +134,8 @@ class MenuController:
   #Opcao 15
   def monitoramento(self):
     self.menu.show_message("Monitoramento em tempo real em desenvolvimento")
+  
+  #Opcao 16
+  def system_info(self):
+    controller = SystemController()
+    controller.show_info()
