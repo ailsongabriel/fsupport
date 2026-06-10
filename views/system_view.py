@@ -5,4 +5,4 @@ class SystemView:
     print(f"Hostname      = {system_info.hostname}")
     print(f"Username      = {system_info.username}")
     print(f"OS            = {system_info.os_name}")
-    print(f"Architecture  = {system_info.architecture}")
+    print(f"Arquitetura  = {system_info.architecture}")
