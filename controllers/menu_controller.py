@@ -3,6 +3,7 @@ from core.utils import clear_screen
 from controllers.system_controller import SystemController
 from controllers.cpu_controller import CpuController
 from controllers.ram_controller import RamController
+from controllers.disk_controller import DiskController
 
 class MenuController:
   
@@ -46,9 +47,11 @@ class MenuController:
       15: self.monitoramento,
       16: self.system_info
     }
+    
     self.cpu_controller = CpuController()
     self.system_controller = SystemController()
     self.ram_controller = RamController()
+    self.disk_controller = DiskController()
 
   def iniciar(self): # Loop do menu
     clear_screen()
@@ -100,7 +103,7 @@ class MenuController:
 
   #Opcao 6
   def disco(self):
-    self.menu.show_message("Ver uso de disco em desenvolvimento")
+    self.disk_controller.show_info()
 
   #Opcao 7
   def rede(self):
