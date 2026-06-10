@@ -3,11 +3,14 @@ from core.utils import clear_screen
 from controllers.system_controller import SystemController
 from controllers.cpu_controller import CpuController
 from controllers.ram_controller import RamController
+from controllers.disk_controller import DiskController
 
 class MenuController:
   
   def __init__(self):
-    self.menu = MenuView()
+    self.menu = MenuView() # View do menu
+
+    # Dicionários para opções e ações
     self.opcoes = { # Dic para visualizacao
       1: " Diagnóstico rápido",
       2: " Diagnóstico completo",
@@ -46,9 +49,12 @@ class MenuController:
       15: self.monitoramento,
       16: self.system_info
     }
-    self.cpu_controller = CpuController()
-    self.system_controller = SystemController()
-    self.ram_controller = RamController()
+    
+    # Controladores para cada funcionalidade
+    self.cpu_controller = CpuController() # Controlador de CPU
+    self.system_controller = SystemController() # Controlador de sistema
+    self.ram_controller = RamController() # Controlador de RAM
+    self.disk_controller = DiskController() # Controlador de disco
 
   def iniciar(self): # Loop do menu
     clear_screen()
@@ -100,7 +106,7 @@ class MenuController:
 
   #Opcao 6
   def disco(self):
-    self.menu.show_message("Ver uso de disco em desenvolvimento")
+    self.disk_controller.show_info()
 
   #Opcao 7
   def rede(self):
