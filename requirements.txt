@@ -1,0 +1,4 @@
+socket
+getpass
+platform
+py-cpuinfo
