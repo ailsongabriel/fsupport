@@ -1,6 +1,7 @@
 from views.menu_view import MenuView
 from core.utils import clear_screen
 from controllers.system_controller import SystemController
+from controllers.cpu_controller import CpuController
 
 class MenuController:
   
@@ -44,6 +45,8 @@ class MenuController:
       15: self.monitoramento,
       16: self.system_info
     }
+    self.cpu_controller = CpuController()
+    self.system_controller = SystemController()
 
   def iniciar(self):
     while True:
@@ -57,9 +60,6 @@ class MenuController:
         self.processar_opcao(opcao)
 
   def processar_opcao(self, opcao):
-    if opcao == 0:
-      self.sair()
-      return
     acao = self.acoes.get(opcao)
 
     if acao:
@@ -93,7 +93,7 @@ class MenuController:
 
   #Opcao 5
   def cpu(self):
-    self.menu.show_message("Ver uso de CPU em desenvolvimento")
+    self.cpu_controller.show_info()
 
   #Opcao 6
   def disco(self):
@@ -137,5 +137,4 @@ class MenuController:
   
   #Opcao 16
   def system_info(self):
-    controller = SystemController()
-    controller.show_info()
+    self.system_controller.show_info()

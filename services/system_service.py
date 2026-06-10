@@ -2,7 +2,6 @@ from models.system_info import SystemInfo
 import socket
 import getpass
 import platform
-import sys
 
 class SystemService:
 
