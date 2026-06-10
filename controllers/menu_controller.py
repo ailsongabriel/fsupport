@@ -2,21 +2,22 @@ from views.menu_view import MenuView
 from core.utils import clear_screen
 from controllers.system_controller import SystemController
 from controllers.cpu_controller import CpuController
+from controllers.ram_controller import RamController
 
 class MenuController:
   
   def __init__(self):
     self.menu = MenuView()
     self.opcoes = { # Dic para visualizacao
-      1: "Diagnóstico rápido",
-      2: "Diagnóstico completo",
-      3: "Ver processos pesados",
-      4: "Ver uso de RAM",
-      5: "Ver uso de CPU",
-      6: "Ver uso de disco",
-      7: "Ver rede",
-      8: "Ver temperatura",
-      9: "Encontrar arquivos duplicados",
+      1: " Diagnóstico rápido",
+      2: " Diagnóstico completo",
+      3: " Ver processos pesados",
+      4: " Ver uso de RAM",
+      5: " Ver uso de CPU",
+      6: " Ver uso de disco",
+      7: " Ver rede",
+      8: " Ver temperatura",
+      9: " Encontrar arquivos duplicados",
       10: "Limpeza automática",
       11: "Startup do sistema",
       12: "Segurança",
@@ -24,7 +25,7 @@ class MenuController:
       14: "Gerar relatório",
       15: "Monitoramento em tempo real",
       16: "Informações do Sistema",
-      0: "Sair"
+      0: " Sair"
     }
     self.acoes = { # Dic para os parametros
       0: self.sair,
@@ -47,8 +48,11 @@ class MenuController:
     }
     self.cpu_controller = CpuController()
     self.system_controller = SystemController()
+    self.ram_controller = RamController()
 
-  def iniciar(self):
+  def iniciar(self): # Loop do menu
+    clear_screen()
+    self.menu.show_banner()
     while True:
         self.menu.show_menu(self.opcoes)
         opcao = self.menu.get_option()
@@ -58,18 +62,17 @@ class MenuController:
             break
 
         self.processar_opcao(opcao)
+        clear_screen()
 
-  def processar_opcao(self, opcao):
+  def processar_opcao(self, opcao): # Processa a opcao escolhida
     acao = self.acoes.get(opcao)
 
     if acao:
       acao()
       self.menu.pause()
-      clear_screen()
     else:
       self.menu.show_message("Opção inválida")
       self.menu.pause()
-      clear_screen()
 
   #Opcao 0
   def sair(self):
@@ -89,7 +92,7 @@ class MenuController:
 
   #Opcao 4
   def ram(self):
-    self.menu.show_message("Ver uso de RAM em desenvolvimento")
+    self.ram_controller.show_info()
 
   #Opcao 5
   def cpu(self):
