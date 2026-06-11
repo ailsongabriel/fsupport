@@ -2,3 +2,5 @@ socket
 getpass
 platform
 py-cpuinfo
+requests
+netifaces

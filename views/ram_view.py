@@ -4,9 +4,9 @@ class RamView(BaseView):
 
   def show_ram_info(self, ram_info):
     print("\n======================== RAM =========================")
-    print(f"Total       = {ram_info.total} GB")
-    print(f"Em uso      = {ram_info.used} GB")
-    print(f"Disponível  = {ram_info.available} GB")
+    print(f"Total       = {self.format_size(ram_info.total)}")
+    print(f"Em uso      = {self.format_size(ram_info.used)}")
+    print(f"Disponível  = {self.format_size(ram_info.available)}")
     print(f"Uso         = {ram_info.usage}%")
 
     if ram_info.average_usage is not None:
