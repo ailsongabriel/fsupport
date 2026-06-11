@@ -10,7 +10,7 @@ class NetworkService:
     hostname = socket.gethostname()
     gateway = self._get_gateway()
     interfaces = self._get_network_interfaces()
-    download_bytes, upload_bytes = self._get_network_speed()
+    download_bytes, upload_bytes = self._get_total_network_usage()
     public_ip = self._get_public_ip()
 
     return NetworkInfo(
@@ -31,20 +31,33 @@ class NetworkService:
     return local_ip
   
   def _get_gateway(self):
-    gateways = netifaces.gateways()
-    return gateways["default"][netifaces.AF_INET][0]
-  
+    try:
+      return netifaces.gateways()["default"][netifaces.AF_INET][0]
+    except:
+      return None
+
   def _get_network_interfaces(self):
-    interfaces = []
-    for iface in psutil.net_if_addrs():
-      interfaces.append(iface)
+    raw = psutil.net_if_addrs()
+
+    interfaces = {}
+
+    for iface, addrs in raw.items():
+      ipv4s = [
+        addr.address
+        for addr in addrs
+        if addr.family == socket.AF_INET
+      ]
+
+      interfaces[iface] = ipv4s
+
     return interfaces
   
-  def _get_network_speed(self):
+  def _get_total_network_usage(self):
     net_io = psutil.net_io_counters()
     return net_io.bytes_recv, net_io.bytes_sent
   
   def _get_public_ip(self):
-    public_ip = get('https://api.ipify.org').text
-    return public_ip
-  
+    try:
+      return get('https://api.ipify.org', timeout=3).text
+    except:
+      return None
