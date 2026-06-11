@@ -4,6 +4,7 @@ from controllers.system_controller import SystemController
 from controllers.cpu_controller import CpuController
 from controllers.ram_controller import RamController
 from controllers.disk_controller import DiskController
+from controllers.network_controller import NetworkController
 
 class MenuController:
   
@@ -52,6 +53,7 @@ class MenuController:
     self.system_controller = SystemController()
     self.ram_controller = RamController()
     self.disk_controller = DiskController()
+    self.network_controller = NetworkController()
 
   def iniciar(self): # Loop do menu
     clear_screen()
@@ -107,7 +109,7 @@ class MenuController:
 
   #Opcao 7
   def rede(self):
-    self.menu.show_message("Ver rede em desenvolvimento")
+    self.network_controller.show_info()
 
   #Opcao 8
   def temperatura(self):
