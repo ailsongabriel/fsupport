@@ -18,15 +18,13 @@ class MenuController:
       5: " Ver uso de CPU",
       6: " Ver uso de disco",
       7: " Ver rede",
-      8: " Ver temperatura",
+      8: " Startup do sistema",
       9: " Encontrar arquivos duplicados",
       10: "Limpeza automática",
-      11: "Startup do sistema",
-      12: "Segurança",
-      13: "Benchmark",
-      14: "Gerar relatório",
-      15: "Monitoramento em tempo real",
-      16: "Informações do Sistema",
+      11: "Segurança",
+      12: "Gerar relatório",
+      13: "Monitoramento em tempo real",
+      14: "Informações do Sistema",
       0: " Sair"
     }
     self.acoes = { # Dic para os parametros
@@ -38,15 +36,13 @@ class MenuController:
       5: self.cpu,
       6: self.disco,
       7: self.rede,
-      8: self.temperatura,
+      8: self.startup,
       9: self.duplicados,
       10: self.limpeza,
-      11: self.startup,
-      12: self.seguranca,
-      13: self.benchmark,
-      14: self.relatorio,
-      15: self.monitoramento,
-      16: self.system_info
+      11: self.seguranca,
+      12: self.relatorio,
+      13: self.monitoramento,
+      14: self.system_info
     }
     
     self.cpu_controller = CpuController()
@@ -78,6 +74,7 @@ class MenuController:
     else:
       self.menu.show_message("Opção inválida")
       self.menu.pause()
+
 
   #Opcao 0
   def sair(self):
@@ -112,8 +109,8 @@ class MenuController:
     self.network_controller.show_info()
 
   #Opcao 8
-  def temperatura(self):
-    self.menu.show_message("Ver temperatura em desenvolvimento")
+  def startup(self):
+    self.menu.show_message("Startup do sistema em desenvolvimento")
 
   #Opcao 9
   def duplicados(self):
@@ -124,25 +121,17 @@ class MenuController:
     self.menu.show_message("Limpeza automática em desenvolvimento")
 
   #Opcao 11
-  def startup(self):
-    self.menu.show_message("Startup do sistema em desenvolvimento")
-
-  #Opcao 12
   def seguranca(self):
     self.menu.show_message("Segurança em desenvolvimento")
 
-  #Opcao 13
-  def benchmark(self):
-    self.menu.show_message("Benchmark em desenvolvimento")
-
-  #Opcao 14
+  #Opcao 12
   def relatorio(self):
     self.menu.show_message("Gerar relatório em desenvolvimento")
 
-  #Opcao 15
+  #Opcao 13
   def monitoramento(self):
     self.menu.show_message("Monitoramento em tempo real em desenvolvimento")
   
-  #Opcao 16
+  #Opcao 14
   def system_info(self):
     self.system_controller.show_info()
