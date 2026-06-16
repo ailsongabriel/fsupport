@@ -4,9 +4,9 @@ class NetworkInfo:
         ip_local,
         hostname,
         gateway,
-        interfaces,  # list[NetworkInterface]
-        download_bytes,
-        upload_bytes,
+        interfaces,  # dict[str, list[str]]
+        bytes_recv,
+        bytes_sent,
         public_ip=None,
         primary_interface=None,
         vpn_status=None
@@ -17,8 +17,8 @@ class NetworkInfo:
 
         self.interfaces = interfaces
 
-        self.download_bytes = download_bytes
-        self.upload_bytes = upload_bytes
+        self.bytes_recv = bytes_recv
+        self.bytes_sent = bytes_sent
 
         self.public_ip = public_ip
         self.primary_interface = primary_interface
