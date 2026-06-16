@@ -1,7 +1,7 @@
 from models.network_info import NetworkInfo
 import psutil
 import socket
-from requests import get
+import requests
 import netifaces
 
 class NetworkService:
@@ -10,7 +10,7 @@ class NetworkService:
     hostname = socket.gethostname()
     gateway = self._get_gateway()
     interfaces = self._get_network_interfaces()
-    download_bytes, upload_bytes = self._get_total_network_usage()
+    bytes_recv, bytes_sent = self._get_total_network_usage()
     public_ip = self._get_public_ip()
 
     return NetworkInfo(
@@ -18,8 +18,8 @@ class NetworkService:
       hostname,
       gateway,
       interfaces,
-      download_bytes,
-      upload_bytes,
+      bytes_recv,
+      bytes_sent,
       public_ip
     )
 
@@ -58,6 +58,6 @@ class NetworkService:
   
   def _get_public_ip(self):
     try:
-      return get('https://api.ipify.org', timeout=3).text
+      return requests.get('https://api.ipify.org', timeout=3).text
     except:
       return None
