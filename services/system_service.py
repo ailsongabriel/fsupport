@@ -26,3 +26,6 @@ class SystemService:
   def _get_architecture(self):
     return platform.architecture()[0]
   
+  def get_os_type(self):
+    return platform.system()
+  
