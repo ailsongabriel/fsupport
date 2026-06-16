@@ -5,6 +5,7 @@ from controllers.cpu_controller import CpuController
 from controllers.ram_controller import RamController
 from controllers.disk_controller import DiskController
 from controllers.network_controller import NetworkController
+from controllers.startup_controller import StartupController
 
 class MenuController:
   
@@ -50,6 +51,7 @@ class MenuController:
     self.ram_controller = RamController()
     self.disk_controller = DiskController()
     self.network_controller = NetworkController()
+    self.startup_controller = StartupController()
 
   def iniciar(self): # Loop do menu
     clear_screen()
@@ -110,7 +112,7 @@ class MenuController:
 
   #Opcao 8
   def startup(self):
-    self.menu.show_message("Startup do sistema em desenvolvimento")
+    self.startup_controller.show_startup_items()
 
   #Opcao 9
   def duplicados(self):
