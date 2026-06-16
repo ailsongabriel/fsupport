@@ -9,8 +9,8 @@ class NetworkView(BaseView):
     if network_info.gateway is not None:
       print(f"Gateway     = {network_info.gateway}")
 
-    print(f"Downloads   = {self.format_size(network_info.download_bytes)}")
-    print(f"Uploads     = {self.format_size(network_info.upload_bytes)}")
+    print(f"Downloads   = {self.format_size(network_info.bytes_recv)}")
+    print(f"Uploads     = {self.format_size(network_info.bytes_sent)}")
 
     if network_info.public_ip is not None: 
       print(f"IP Público  = {network_info.public_ip}")
