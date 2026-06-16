@@ -6,8 +6,7 @@ class BaseView:
   def pause(self):
     input("\nPressione ENTER para continuar...")
 
-  def format_size(self, size): # Formata o tamanho do disco para uma unidade legível
-
+  def format_size(self, size): # Formata o tamanho do disco para uma unidade legíve
     if size is None: # Se o valor for None, retorna "N/A"
       return "N/A"
     for unit in ['B', 'KB', 'MB', 'GB', 'TB']: # Converte o tamanho para a unidade apropriada
@@ -15,3 +14,21 @@ class BaseView:
         return f"{size:.2f} {unit}" # Formata o valor com 2 casas decimais
       size /= 1024 # Divide o tamanho por 1024 para converter para a próxima unidade
     return f"{size:.2f} PB" # Se o tamanho for maior que 1024 TB, retorna o valor em PB
+  
+  def get_width(self, lines, min_width=50, padding=4):
+    if not lines:
+      return min_width
+
+    return max(
+      min_width,
+      max(len(line) for line in lines) + padding
+    )
+
+  def print_title(self, title, width):
+    print(f"\n{f' {title} ':=^{width}}")
+
+  def print_subtitle(self, title, width):
+    print(f"\n{f' {title} ':-^{width}}")
+
+  def print_separator(self, width):
+    print("-" * width)
