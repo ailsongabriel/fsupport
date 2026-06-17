@@ -20,3 +20,12 @@ _  __╱       ____╱ ╱╱ ╱_╱ ╱__  ╱_╱ ╱_  ╱_╱ ╱ ╱_╱ �
   def get_option(self):
     opcao = int(input("\nDigite a opcao desejada:"))
     return opcao
+  
+  def close_banner(self):
+    print(r"""
+                  _
+             .---/ '____
+   _________'   | .-.---'
+   ---------.   | |_|___
+             '---\_.----'
+""")
