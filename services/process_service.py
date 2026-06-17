@@ -10,14 +10,40 @@ from models.process_info import ProcessInfo
 
 class ProcessService:
 
-  CPU_LIMIT = 10.0
-  RAM_MB_LIMIT = 300.0
+  CPU_ACTIVITY_LIMIT = 10.0
+  RAM_ACTIVITY_MB_LIMIT = 300.0
+  SUSPICIOUS_SCORE_LIMIT = 50
   RISK_PATHS = [
     "\\appdata\\",
     "\\temp\\",
-    "\\downloads\\",
-    "\\programdata\\"
+    "\\downloads\\"
   ]
+  TRUSTED_NETWORK_NAMES = {
+    "brave.exe",
+    "chrome.exe",
+    "discord.exe",
+    "firefox.exe",
+    "msedge.exe",
+    "onedrive.exe",
+    "opera.exe",
+    "python.exe",
+    "pythonw.exe",
+    "steam.exe",
+    "teams.exe",
+    "telegram.exe",
+    "whatsapp.exe"
+  }
+  SYSTEM_NAMES = {
+    "csrss.exe",
+    "dwm.exe",
+    "explorer.exe",
+    "lsass.exe",
+    "services.exe",
+    "svchost.exe",
+    "system",
+    "wininit.exe",
+    "winlogon.exe"
+  }
 
   def scan_processes(self, limit=10, cpu_sample_interval=1):
     processes = self._collect_processes(cpu_sample_interval)
@@ -28,7 +54,7 @@ class ProcessService:
       if process.connections
     ]
     suspicious_processes = sorted(
-      [process for process in processes if process.risk_score > 0],
+      [process for process in processes if process.risk_score >= self.SUSPICIOUS_SCORE_LIMIT],
       key=lambda item: item.risk_score,
       reverse=True
     )
@@ -77,7 +103,7 @@ class ProcessService:
         cpu_percent = round(process.cpu_percent(interval=None), 2)
         memory_mb = round(info["memory_info"].rss / 1024 / 1024, 2)
         connections = self._get_connections(process)
-        risk_flags, risk_score, recommendation = self._analyze_risk(
+        activity_flags, risk_flags, risk_score, recommendation = self._analyze_process(
           info,
           cpu_percent,
           memory_mb,
@@ -95,6 +121,7 @@ class ProcessService:
           cmdline=" ".join(info["cmdline"]) if info["cmdline"] else None,
           create_time=info["create_time"],
           connections=connections,
+          activity_flags=activity_flags,
           risk_flags=risk_flags,
           risk_score=risk_score,
           recommendation=recommendation
@@ -130,44 +157,67 @@ class ProcessService:
 
     return connections
 
-  def _analyze_risk(self, info, cpu_percent, memory_mb, connections):
+  def _analyze_process(self, info, cpu_percent, memory_mb, connections):
+    activity_flags = []
     risk_flags = []
     score = 0
+    name = (info["name"] or "").lower()
     exe = info["exe"] or ""
     exe_lower = exe.lower()
 
-    if cpu_percent >= self.CPU_LIMIT:
-      risk_flags.append("high_cpu")
-      score += 20
+    if cpu_percent >= self.CPU_ACTIVITY_LIMIT:
+      activity_flags.append("high_cpu")
 
-    if memory_mb >= self.RAM_MB_LIMIT:
-      risk_flags.append("high_ram")
-      score += 15
+    if memory_mb >= self.RAM_ACTIVITY_MB_LIMIT:
+      activity_flags.append("high_ram")
 
     external_connections = [
       connection for connection in connections
       if self._is_external_address(connection.remote_address)
     ]
     if external_connections:
-      risk_flags.append("external_network_connection")
+      activity_flags.append("external_network_connection")
+
+    trusted_network_process = name in self.TRUSTED_NETWORK_NAMES
+    system_process = (
+      name == "system" or
+      (name in self.SYSTEM_NAMES and "\\windows\\system32\\" in exe_lower)
+    )
+    unusual_path = exe and any(path in exe_lower for path in self.RISK_PATHS)
+    unavailable_path = not exe
+
+    if unusual_path:
+      risk_flags.append("unusual_path")
+      score += 30
+
+    if unavailable_path and external_connections and not system_process:
+      risk_flags.append("executable_path_unavailable")
       score += 25
 
-    if exe and any(path in exe_lower for path in self.RISK_PATHS):
-      risk_flags.append("unusual_path")
+    if external_connections and unusual_path and not trusted_network_process:
+      risk_flags.append("external_network_from_unusual_path")
+      score += 30
+
+    if cpu_percent >= self.CPU_ACTIVITY_LIMIT and unusual_path:
+      risk_flags.append("high_cpu_from_unusual_path")
       score += 20
 
-    if not exe:
-      risk_flags.append("executable_path_unavailable")
-      score += 10
+    if memory_mb >= self.RAM_ACTIVITY_MB_LIMIT and unusual_path:
+      risk_flags.append("high_ram_from_unusual_path")
+      score += 15
+
+    if (trusted_network_process and not unusual_path) or system_process:
+      score = 0
+      risk_flags = []
 
     recommendation = None
-    if score > 0:
+    if score >= self.SUSPICIOUS_SCORE_LIMIT:
       recommendation = (
-        "Verificar assinatura, caminho do executavel e reputacao do processo "
+        "Investigar o caminho do executavel, assinatura digital e reputacao "
         "antes de qualquer acao corretiva."
       )
 
-    return risk_flags, score, recommendation
+    return activity_flags, risk_flags, score, recommendation
 
   def _format_address(self, address):
     if not address:

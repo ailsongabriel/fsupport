@@ -9,22 +9,22 @@ class ProcessView(BaseView):
       f"Coletado em             = {scan['collected_at']}",
       f"Processos analisados    = {summary['total_processes']}",
       f"Com conexoes de rede    = {summary['network_processes_count']}",
-      f"Suspeitas sinalizadas   = {summary['suspicious_count']}",
-      f"Arquivo latest          = {latest_path}",
-      f"Arquivo da coleta       = {session_path}"
+      f"Suspeitas reais         = {summary['suspicious_count']}",
+      f"Dados para diagnostico  = {latest_path}",
+      f"Historico da coleta     = {session_path}"
     ]
 
     width = self.get_width(lines)
-    self.print_title("PROCESSOS PESADOS E SUSPEITOS", width)
+    self.print_title("PROCESSOS EM DESTAQUE", width)
     for line in lines:
       print(line)
 
-    self._print_process_table("Top CPU", scan["top_cpu"], width, show_connections=False)
-    self._print_process_table("Top RAM", scan["top_ram"], width, show_connections=False)
-    self._print_process_table("Processos com rede", scan["network_processes"], width)
-    self._print_process_table("Sinais de suspeita", scan["suspicious_processes"], width)
+    self._print_process_table("Maior uso de CPU", scan["top_cpu"], width, mode="compact")
+    self._print_process_table("Maior uso de RAM", scan["top_ram"], width, mode="compact")
+    self._print_process_table("Processos com conexao de rede", scan["network_processes"], width, mode="network")
+    self._print_process_table("Suspeitas para investigar", scan["suspicious_processes"], width, mode="risk")
 
-  def _print_process_table(self, title, processes, width, show_connections=True):
+  def _print_process_table(self, title, processes, width, mode="compact"):
     self.print_subtitle(title, width)
 
     if not processes:
@@ -36,24 +36,28 @@ class ProcessView(BaseView):
         f"PID {process['pid']:<7} "
         f"{self._shorten(process['name'], 24):<24} "
         f"CPU {process['cpu_percent']:>6.2f}% "
-        f"RAM {process['memory_mb']:>8.2f} MB "
-        f"Risco {process['risk_score']:>3}"
+        f"RAM {process['memory_mb']:>8.2f} MB"
       )
 
-      if process["risk_flags"]:
-        print(f"  Sinais: {', '.join(process['risk_flags'])}")
+      if process["activity_flags"]:
+        print(f"  Atividade: {', '.join(process['activity_flags'])}")
 
-      if process["exe"]:
+      if mode == "risk":
+        print(f"  Risco: {process['risk_score']}")
+        if process["risk_flags"]:
+          print(f"  Sinais: {', '.join(process['risk_flags'])}")
+
+      if mode in {"network", "risk"} and process["exe"]:
         print(f"  Exe: {self._shorten(process['exe'], width - 7)}")
 
-      if show_connections and process["connections"]:
+      if mode in {"network", "risk"} and process["connections"]:
         for connection in process["connections"][:3]:
           print(
             f"  Rede: {connection['local_address']} -> "
             f"{connection['remote_address']} ({connection['status']})"
           )
 
-      if process["recommendation"]:
+      if mode == "risk" and process["recommendation"]:
         print(f"  Sugestao: {process['recommendation']}")
 
   def _shorten(self, value, max_length):
