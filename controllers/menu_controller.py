@@ -23,11 +23,10 @@ class MenuController:
       7: " Ver rede",
       8: " Startup do sistema",
       9: " Encontrar arquivos duplicados",
-      10: "Limpeza automática",
-      11: "Segurança",
-      12: "Gerar relatório",
-      13: "Monitoramento em tempo real",
-      14: "Informações do Sistema",
+      10: "Segurança",
+      11: "Gerar relatório",
+      12: "Monitoramento em tempo real",
+      13: "Informações do Sistema",
       0: " Sair"
     }
     self.acoes = { # Dic para os parametros
@@ -41,11 +40,10 @@ class MenuController:
       7: self.rede,
       8: self.startup,
       9: self.duplicados,
-      10: self.limpeza,
-      11: self.seguranca,
-      12: self.relatorio,
-      13: self.monitoramento,
-      14: self.system_info
+      10: self.seguranca,
+      11: self.relatorio,
+      12: self.monitoramento,
+      13: self.system_info
     }
     
     self.cpu_controller = CpuController()
@@ -125,21 +123,17 @@ class MenuController:
     self.duplicate_controller.show_duplicates()
 
   #Opcao 10
-  def limpeza(self):
-    self.menu.show_message("Limpeza automática em desenvolvimento")
-
-  #Opcao 11
   def seguranca(self):
     self.security_controller.show_info()
 
-  #Opcao 12
+  #Opcao 11
   def relatorio(self):
     self.menu.show_message("Gerar relatório em desenvolvimento")
 
-  #Opcao 13
+  #Opcao 12
   def monitoramento(self):
     self.menu.show_message("Monitoramento em tempo real em desenvolvimento")
   
-  #Opcao 14
+  #Opcao 13
   def system_info(self):
     self.system_controller.show_info()
