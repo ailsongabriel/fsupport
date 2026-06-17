@@ -14,13 +14,21 @@ class ProcessService:
   RAM_ACTIVITY_MB_LIMIT = 300.0
   SUSPICIOUS_SCORE_LIMIT = 50
   RISK_PATHS = [
-    "\\appdata\\",
     "\\temp\\",
-    "\\downloads\\"
+    "\\downloads\\",
+    "\\appdata\\roaming\\"
+  ]
+  TRUSTED_PATHS = [
+    "\\appdata\\local\\programs\\",
+    "\\appdata\\local\\python\\",
+    "\\program files\\",
+    "\\program files (x86)\\",
+    "\\windows\\system32\\"
   ]
   TRUSTED_NETWORK_NAMES = {
     "brave.exe",
     "chrome.exe",
+    "code.exe",
     "discord.exe",
     "firefox.exe",
     "msedge.exe",
@@ -179,11 +187,16 @@ class ProcessService:
       activity_flags.append("external_network_connection")
 
     trusted_network_process = name in self.TRUSTED_NETWORK_NAMES
+    trusted_path = exe and any(path in exe_lower for path in self.TRUSTED_PATHS)
     system_process = (
       name == "system" or
       (name in self.SYSTEM_NAMES and "\\windows\\system32\\" in exe_lower)
     )
-    unusual_path = exe and any(path in exe_lower for path in self.RISK_PATHS)
+    unusual_path = (
+      exe and
+      not trusted_path and
+      any(path in exe_lower for path in self.RISK_PATHS)
+    )
     unavailable_path = not exe
 
     if unusual_path:
@@ -206,7 +219,7 @@ class ProcessService:
       risk_flags.append("high_ram_from_unusual_path")
       score += 15
 
-    if (trusted_network_process and not unusual_path) or system_process:
+    if (trusted_network_process and trusted_path) or system_process:
       score = 0
       risk_flags = []
 
