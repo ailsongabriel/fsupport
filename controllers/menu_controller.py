@@ -6,6 +6,7 @@ from controllers.ram_controller import RamController
 from controllers.disk_controller import DiskController
 from controllers.network_controller import NetworkController
 from controllers.startup_controller import StartupController
+from controllers.duplicate_controller import DuplicateController
 
 class MenuController:
   
@@ -52,6 +53,7 @@ class MenuController:
     self.disk_controller = DiskController()
     self.network_controller = NetworkController()
     self.startup_controller = StartupController()
+    self.duplicate_controller = DuplicateController()
 
   def iniciar(self): # Loop do menu
     clear_screen()
@@ -116,7 +118,7 @@ class MenuController:
 
   #Opcao 9
   def duplicados(self):
-    self.menu.show_message("Encontrar arquivos duplicados em desenvolvimento")
+    self.duplicate_controller.show_duplicates()
 
   #Opcao 10
   def limpeza(self):
