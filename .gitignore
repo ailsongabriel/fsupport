@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 storage/logs/*
 storage/reports/*
+storage/processes/*
 .vscode/
 .idea/
 teste.py
