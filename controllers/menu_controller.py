@@ -8,6 +8,7 @@ from controllers.network_controller import NetworkController
 from controllers.startup_controller import StartupController
 from controllers.duplicate_controller import DuplicateController
 from controllers.security_controller import SecurityController
+from controllers.process_controller import ProcessController
 
 class MenuController:
   
@@ -54,6 +55,7 @@ class MenuController:
     self.startup_controller = StartupController()
     self.duplicate_controller = DuplicateController()
     self.security_controller = SecurityController()
+    self.process_controller = ProcessController()
 
   def iniciar(self): # Loop do menu
     clear_screen()
@@ -96,7 +98,7 @@ class MenuController:
 
   #Opcao 3
   def processos_pesados(self):
-    self.menu.show_message("Ver processos pesados em desenvolvimento")
+    self.process_controller.show_heavy_processes()
 
   #Opcao 4
   def ram(self):
