@@ -7,6 +7,7 @@ from controllers.disk_controller import DiskController
 from controllers.network_controller import NetworkController
 from controllers.startup_controller import StartupController
 from controllers.duplicate_controller import DuplicateController
+from controllers.security_controller import SecurityController
 
 class MenuController:
   
@@ -54,20 +55,21 @@ class MenuController:
     self.network_controller = NetworkController()
     self.startup_controller = StartupController()
     self.duplicate_controller = DuplicateController()
+    self.security_controller = SecurityController()
 
   def iniciar(self): # Loop do menu
     clear_screen()
     self.menu.show_banner()
     while True:
-        self.menu.show_menu(self.opcoes)
-        opcao = self.menu.get_option()
+      self.menu.show_menu(self.opcoes)
+      opcao = self.menu.get_option()
 
-        if opcao == 0:
-            self.sair()
-            break
+      if opcao == 0:
+        self.sair()
+        break
 
-        self.processar_opcao(opcao)
-        clear_screen()
+      self.processar_opcao(opcao)
+      clear_screen()
 
   def processar_opcao(self, opcao): # Processa a opcao escolhida
     acao = self.acoes.get(opcao)
@@ -82,7 +84,9 @@ class MenuController:
 
   #Opcao 0
   def sair(self):
-    self.menu.show_message("Saindo do sistema")
+    clear_screen()
+    self.menu.show_message("\n\tDesligando...")
+    self.menu.close_banner()
 
   #Opcao 1
   def diagnostico_rapido(self):
@@ -126,7 +130,7 @@ class MenuController:
 
   #Opcao 11
   def seguranca(self):
-    self.menu.show_message("Segurança em desenvolvimento")
+    self.security_controller.show_info()
 
   #Opcao 12
   def relatorio(self):

@@ -8,7 +8,7 @@ class SystemView(BaseView):
       f"Hostname      = {system_info.hostname}",
       f"Username      = {system_info.username}",
       f"OS            = {system_info.os_name}",
-      f"Arquitetura  = {system_info.architecture}"
+      f"Arquitetura   = {system_info.architecture}"
     ]
     
     width = self.get_width(lines)
