@@ -11,6 +11,7 @@ class ProcessInfo:
     cmdline,
     create_time,
     connections=None,
+    activity_flags=None,
     risk_flags=None,
     risk_score=0,
     recommendation=None
@@ -25,6 +26,7 @@ class ProcessInfo:
     self.cmdline = cmdline
     self.create_time = create_time
     self.connections = connections if connections is not None else []
+    self.activity_flags = activity_flags if activity_flags is not None else []
     self.risk_flags = risk_flags if risk_flags is not None else []
     self.risk_score = risk_score
     self.recommendation = recommendation
@@ -41,6 +43,7 @@ class ProcessInfo:
       "cmdline": self.cmdline,
       "create_time": self.create_time,
       "connections": [connection.to_dict() for connection in self.connections],
+      "activity_flags": self.activity_flags,
       "risk_flags": self.risk_flags,
       "risk_score": self.risk_score,
       "recommendation": self.recommendation
