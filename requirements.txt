@@ -2,3 +2,4 @@ py-cpuinfo
 requests
 netifaces
 psutil
+reportlab
