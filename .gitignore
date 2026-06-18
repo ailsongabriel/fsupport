@@ -4,6 +4,7 @@ __pycache__/
 storage/logs/*
 storage/reports/*
 storage/processes/*
+storage/monitoring/*
 .vscode/
 .idea/
 teste.py
