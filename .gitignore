@@ -4,6 +4,10 @@ __pycache__/
 storage/*
 report/*
 _storage/*
+reports/*.md
+reports/*.txt
+reports/*.pdf
+reports/history/*
 .vscode/
 .idea/
 teste.py

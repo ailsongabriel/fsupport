@@ -15,7 +15,7 @@ class ReportService:
 
   def __init__(self):
     self.storage = StorageService()
-    self.output_path = Path("report")
+    self.output_path = Path("reports")
 
   def generate_latest_report(self):
     diagnostic = self._load_latest_diagnostic()
@@ -38,8 +38,8 @@ class ReportService:
     text_history = self._save_report_text(f"history/{safe_timestamp}.txt", text)
     text_latest = self._save_report_text("latest_report.txt", text)
 
-    pdf_history = self._save_pdf(f"report/history/{safe_timestamp}.pdf", report)
-    pdf_latest = self._save_pdf("report/latest_report.pdf", report)
+    pdf_history = self._save_pdf(self.output_path / "history" / f"{safe_timestamp}.pdf", report)
+    pdf_latest = self._save_pdf(self.output_path / "latest_report.pdf", report)
 
     return {
       "success": True,
