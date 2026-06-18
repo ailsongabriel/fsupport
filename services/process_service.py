@@ -85,9 +85,12 @@ class ProcessService:
 
   def _collect_processes(self, cpu_sample_interval):
     raw_processes = []
+    logical_cpu_count = psutil.cpu_count(logical=True) or 1
 
     for process in psutil.process_iter():
       try:
+        if self._is_ignored_process(process):
+          continue
         process.cpu_percent(interval=None)
         raw_processes.append(process)
       except (psutil.NoSuchProcess, psutil.AccessDenied):
@@ -108,7 +111,8 @@ class ProcessService:
           "cmdline",
           "create_time"
         ])
-        cpu_percent = round(process.cpu_percent(interval=None), 2)
+        raw_cpu_percent = process.cpu_percent(interval=None)
+        cpu_percent = round(raw_cpu_percent / logical_cpu_count, 2)
         memory_mb = round(info["memory_info"].rss / 1024 / 1024, 2)
         connections = self._get_connections(process)
         activity_flags, risk_flags, risk_score, recommendation = self._analyze_process(
@@ -138,6 +142,13 @@ class ProcessService:
         continue
 
     return processes
+
+  def _is_ignored_process(self, process):
+    try:
+      name = (process.name() or "").lower()
+      return process.pid == 0 or name == "system idle process"
+    except (psutil.NoSuchProcess, psutil.AccessDenied):
+      return True
 
   def _get_connections(self, process):
     connections = []
