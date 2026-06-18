@@ -32,6 +32,7 @@ class ProcessView(BaseView):
       return
 
     for process in processes[:10]:
+      print("")
       print(
         f"PID {process['pid']:<7} "
         f"{self._shorten(process['name'], 24):<24} "
