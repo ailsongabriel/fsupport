@@ -1,0 +1,1112 @@
+{
+  "collected_at": "2026-06-17T21:15:44",
+  "summary": {
+    "total_processes": 308,
+    "top_cpu_count": 10,
+    "top_ram_count": 10,
+    "network_processes_count": 23,
+    "suspicious_count": 0
+  },
+  "top_cpu": [
+    {
+      "pid": 35664,
+      "name": "python.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 1.87,
+      "memory_mb": 42.05,
+      "memory_percent": 0.13,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "cmdline": "python app.py",
+      "create_time": 1781741740.546338,
+      "connections": [],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 25956,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.29,
+      "memory_mb": 170.67,
+      "memory_percent": 0.52,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -parentBuildID 20260610172436 -prefsHandle 2012:46276 -prefMapHandle 2028:301035 -ipcHandle 2064 -initialChannelId {72dbe5b9-a444-4564-8245-b4dd21a95ef7} -parentPid 23080 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.23080 -crashHelperPid 0 -crashHelper 2084 -appDir C:\\Program Files\\Mozilla Firefox\\browser - 1 gpu",
+      "create_time": 1781740566.475606,
+      "connections": [],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 5384,
+      "name": "WmiPrvSE.exe",
+      "username": null,
+      "cpu_percent": 0.22,
+      "memory_mb": 36.48,
+      "memory_percent": 0.11,
+      "exe": "C:\\Windows\\System32\\wbem\\WmiPrvSE.exe",
+      "cmdline": null,
+      "create_time": 1781740542.4756844,
+      "connections": [],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 4,
+      "name": "System",
+      "username": "NT AUTHORITY\\SYSTEM",
+      "cpu_percent": 0.1,
+      "memory_mb": 17.43,
+      "memory_percent": 0.05,
+      "exe": "",
+      "cmdline": null,
+      "create_time": 0.0,
+      "connections": [],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 4856,
+      "name": "svchost.exe",
+      "username": null,
+      "cpu_percent": 0.09,
+      "memory_mb": 28.43,
+      "memory_percent": 0.09,
+      "exe": "C:\\Windows\\System32\\svchost.exe",
+      "cmdline": null,
+      "create_time": 1781740542.2988973,
+      "connections": [],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 5692,
+      "name": "svchost.exe",
+      "username": null,
+      "cpu_percent": 0.08,
+      "memory_mb": 33.61,
+      "memory_percent": 0.1,
+      "exe": "C:\\Windows\\System32\\svchost.exe",
+      "cmdline": null,
+      "create_time": 1781740542.503654,
+      "connections": [],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 23504,
+      "name": "lghub_agent.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.07,
+      "memory_mb": 177.23,
+      "memory_percent": 0.54,
+      "exe": "C:\\Program Files\\LGHUB\\lghub_agent.exe",
+      "cmdline": "C:\\Program Files\\LGHUB\\lghub_agent.exe",
+      "create_time": 1781740631.7105772,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:60438",
+          "remote_address": "127.0.0.1:28194",
+          "status": "SYN_SENT"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 26336,
+      "name": "NZXT CAM.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.07,
+      "memory_mb": 224.17,
+      "memory_percent": 0.69,
+      "exe": "C:\\Program Files\\NZXT CAM\\NZXT CAM.exe",
+      "cmdline": "C:\\Program Files\\NZXT CAM\\NZXT CAM.exe --type=renderer --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\NZXT CAM --secure-schemes=sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=sentry-ipc --app-user-model-id=NZXT.CAM --app-path=C:\\Program Files\\NZXT CAM\\resources\\app.asar --no-sandbox --no-zygote --js-flags=--expose-gc --disable-gpu-compositing --video-capture-use-gpu-memory-buffer --lang=pt-BR --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=6 --time-ticks-at-unix-epoch=-1781740526183019 --launch-time-ticks=39236776 --field-trial-handle=3956,i,3078773146872812197,8559089655959915161,262144 --disable-features=SpareRendererForSitePerProcess,Vulkan,WinDelaySpellcheckServiceInit,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --mojo-platform-channel-handle=4020 /prefetch:1",
+      "create_time": 1781740565.431677,
+      "connections": [],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 27532,
+      "name": "cam_helper.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.07,
+      "memory_mb": 70.71,
+      "memory_percent": 0.22,
+      "exe": "C:\\Program Files\\NZXT CAM\\resources\\app.asar.unpacked\\node_modules\\@nzxt\\cam-core\\dist\\cam_helper.exe",
+      "cmdline": "\\\\?\\C:\\Program Files\\NZXT CAM\\resources\\app.asar.unpacked\\node_modules\\@nzxt\\cam-core\\dist\\cam_helper.exe --transfer-server d60b4c22-5570-48ad-a1e4-9067dc49a194 --refresh-server b589bf47-7522-416a-a233-f8285b247366 --run-id e11dfa53524e43aa93039c44b4f06dba --app-version NZXT CAM@4.76.3 --environment production --log-directory C:\\Users\\Gabriel\\AppData\\Roaming\\NZXT CAM\\logs --log-level INFO --app-instance-id 3d345d90-0db7-4935-96ff-fad0d149a3d0",
+      "create_time": 1781740566.8961253,
+      "connections": [],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 12292,
+      "name": "AcPowerNotification.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.04,
+      "memory_mb": 19.89,
+      "memory_percent": 0.06,
+      "exe": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\AcPowerNotification\\AcPowerNotification.exe",
+      "cmdline": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\AcPowerNotification\\AcPowerNotification.exe",
+      "create_time": 1781740546.351972,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:2230",
+          "remote_address": "127.0.0.1:1042",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    }
+  ],
+  "top_ram": [
+    {
+      "pid": 27668,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 778.89,
+      "memory_percent": 2.38,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 4608:46501 -prefMapHandle 4612:301035 -jsInitHandle 4616:156120 -parentBuildID 20260610172436 -ipcHandle 4624 -initialChannelId {52a41839-b307-4928-bcb9-b94695855fc6} -parentPid 23080 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.23080 -crashHelperPid 0 -crashHelper 4632 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 5 tab",
+      "create_time": 1781740567.0694666,
+      "connections": [],
+      "activity_flags": [
+        "high_ram"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 6880,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 637.86,
+      "memory_percent": 1.95,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 7932:50174 -prefMapHandle 7984:301035 -jsInitHandle 3500:156120 -parentBuildID 20260610172436 -ipcHandle 6184 -initialChannelId {ac5c5843-91d1-479a-83a0-2dce305ca896} -parentPid 23080 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.23080 -crashHelperPid 0 -crashHelper 7708 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 11 tab",
+      "create_time": 1781740605.29242,
+      "connections": [],
+      "activity_flags": [
+        "high_ram"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 17212,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 542.45,
+      "memory_percent": 1.66,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --video-capture-use-gpu-memory-buffer --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1764,i,8936249228679295994,1038196403452502567,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1768,i,9146764823246603292,2960785903927343306,4 --trace-process-track-uuid=3190708993808206286 --mojo-platform-channel-handle=4060 /prefetch:14",
+      "create_time": 1781740739.0050447,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:32805",
+          "remote_address": "100.21.131.68:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [
+        "high_ram",
+        "external_network_connection"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 18012,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 527.24,
+      "memory_percent": 1.61,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 4792:50174 -prefMapHandle 7924:301035 -jsInitHandle 916:156120 -parentBuildID 20260610172436 -ipcHandle 8816 -initialChannelId {a0ef5891-3149-4de7-bb50-ef114b6312f1} -parentPid 23080 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.23080 -crashHelperPid 0 -crashHelper 6432 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 12 tab",
+      "create_time": 1781740664.162037,
+      "connections": [],
+      "activity_flags": [
+        "high_ram"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 23080,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 512.7,
+      "memory_percent": 1.57,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "create_time": 1781740566.277306,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:34412",
+          "remote_address": "2607:6bc0::10:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:2268",
+          "remote_address": "34.107.243.93:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:34417",
+          "remote_address": "2606:50c0:8000::154:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:34419",
+          "remote_address": "140.82.112.25:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:2247",
+          "remote_address": "127.0.0.1:2248",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:2248",
+          "remote_address": "127.0.0.1:2247",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:34418",
+          "remote_address": "2606:50c0:8000::215:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:2260",
+          "remote_address": "2800:3f0:4004:80c::200e:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [
+        "high_ram",
+        "external_network_connection"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 9368,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 444.05,
+      "memory_percent": 1.36,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 9120:50174 -prefMapHandle 8712:301035 -jsInitHandle 9144:156120 -parentBuildID 20260610172436 -ipcHandle 3488 -initialChannelId {82501519-d9fd-49f3-bebb-d6384f69d0c2} -parentPid 23080 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.23080 -crashHelperPid 0 -crashHelper 6532 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 13 tab",
+      "create_time": 1781741135.94772,
+      "connections": [],
+      "activity_flags": [
+        "high_ram"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 33948,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 433.97,
+      "memory_percent": 1.33,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe c:\\Users\\Gabriel\\.vscode\\extensions\\ms-python.vscode-pylance-2026.2.1\\dist\\server.bundle.js --cancellationReceive=file:41a424a62bf9a8d5796e62a314bbabe31bb081cd09 --node-ipc --clientProcessId=17212",
+      "create_time": 1781740746.8358305,
+      "connections": [],
+      "activity_flags": [
+        "high_ram"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 29188,
+      "name": "steamwebhelper.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 411.72,
+      "memory_percent": 1.26,
+      "exe": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+      "cmdline": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe --type=renderer --enable-dinosaur-easter-egg-alt-images --enable-chrome-runtime --user-data-dir=C:\\Users\\Gabriel\\AppData\\Local\\Steam\\htmlcache --user-agent-product=Valve Steam Client --buildid=1781041600 --steamid=0 --valve-initial-threadpool-size=8 --gaia-url=http://disabled.invalid --disable-gpu-compositing --lang=pt-BR --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1781740526186935 --launch-time-ticks=42140129 --field-trial-handle=4160,i,9091574035380158987,3614618116616988226,262144 --disable-features=BlockPromptsIfIgnoredOften,DcheckIsFatal,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-logging=handle --log-file=4172 --mojo-platform-channel-handle=4168 /prefetch:1",
+      "create_time": 1781740568.332164,
+      "connections": [],
+      "activity_flags": [
+        "high_ram"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 6108,
+      "name": "MsMpEng.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 389.43,
+      "memory_percent": 1.19,
+      "exe": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26050.15-0\\MsMpEng.exe",
+      "cmdline": null,
+      "create_time": 1781740542.5232308,
+      "connections": [],
+      "activity_flags": [
+        "high_ram"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 6740,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 362.43,
+      "memory_percent": 1.11,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=renderer --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-user-model-id=Microsoft.VisualStudioCode --app-path=C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1781740526190950 --launch-time-ticks=212077549 --field-trial-handle=1764,i,8936249228679295994,1038196403452502567,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1768,i,9146764823246603292,2960785903927343306,4 --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=3344 --vscode-window-config=vscode:ea80d430-2708-45cd-9fc7-2d302cb075f6 /prefetch:1",
+      "create_time": 1781740738.2738278,
+      "connections": [],
+      "activity_flags": [
+        "high_ram"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    }
+  ],
+  "network_processes": [
+    {
+      "pid": 5660,
+      "name": "ArmouryCrate.Service.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 79.71,
+      "memory_percent": 0.24,
+      "exe": "C:\\Program Files\\ASUS\\Armoury Crate Service\\ArmouryCrate.Service.exe",
+      "cmdline": null,
+      "create_time": 1781740542.5014632,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:50100",
+          "remote_address": "127.0.0.1:49765",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 5700,
+      "name": "avp.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 146.71,
+      "memory_percent": 0.45,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky 21.25\\avp.exe",
+      "cmdline": null,
+      "create_time": 1781740542.5052176,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:49739",
+          "remote_address": "127.0.0.1:49740",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:49743",
+          "remote_address": "185.201.1.217:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:49740",
+          "remote_address": "127.0.0.1:49739",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [
+        "external_network_connection"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 5812,
+      "name": "svchost.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 26.72,
+      "memory_percent": 0.08,
+      "exe": "C:\\Windows\\System32\\svchost.exe",
+      "cmdline": null,
+      "create_time": 1781740542.508764,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:49752",
+          "remote_address": "2603:1030:210:f::2:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 5836,
+      "name": "ROGLiveService.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 47.44,
+      "memory_percent": 0.15,
+      "exe": "C:\\Program Files\\ASUS\\ROG Live Service\\ROGLiveService.exe",
+      "cmdline": null,
+      "create_time": 1781740542.5101345,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:49672",
+          "remote_address": "127.0.0.1:13030",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:13030",
+          "remote_address": "127.0.0.1:49672",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 11956,
+      "name": "codex.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 116.75,
+      "memory_percent": 0.36,
+      "exe": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.611.8604.0_x64__2p2nqsd0c76g0\\app\\resources\\codex.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.611.8604.0_x64__2p2nqsd0c76g0\\app\\resources\\codex.exe app-server --analytics-default-enabled",
+      "create_time": 1781740678.3867564,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:34403",
+          "remote_address": "2a06:98c1:3100::6812:202f:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:50691",
+          "remote_address": "2a06:98c1:3100::6812:202f:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:34355",
+          "remote_address": "2a06:98c1:3100::6812:202f:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 12156,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 52.23,
+      "memory_percent": 0.16,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1764,i,8936249228679295994,1038196403452502567,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1768,i,9146764823246603292,2960785903927343306,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=1956 /prefetch:11",
+      "create_time": 1781740738.103518,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:7830",
+          "remote_address": "2606:50c0:8003::154:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:28688",
+          "remote_address": "40.71.11.167:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:9027",
+          "remote_address": "20.42.73.27:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [
+        "external_network_connection"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 12292,
+      "name": "AcPowerNotification.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.04,
+      "memory_mb": 19.89,
+      "memory_percent": 0.06,
+      "exe": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\AcPowerNotification\\AcPowerNotification.exe",
+      "cmdline": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\AcPowerNotification\\AcPowerNotification.exe",
+      "create_time": 1781740546.351972,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:2230",
+          "remote_address": "127.0.0.1:1042",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 13036,
+      "name": "ksde.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 21.85,
+      "memory_percent": 0.07,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky VPN 5.25\\ksde.exe",
+      "cmdline": null,
+      "create_time": 1781740667.336667,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:10336",
+          "remote_address": "212.73.235.47:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:54901",
+          "remote_address": "37.203.128.51:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "127.0.0.1:10335",
+          "remote_address": "127.0.0.1:10334",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:10334",
+          "remote_address": "127.0.0.1:10335",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [
+        "external_network_connection"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 14896,
+      "name": "ArmouryCrate.UserSessionHelper.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 76.01,
+      "memory_percent": 0.23,
+      "exe": "C:\\Program Files\\ASUS\\Armoury Crate Service\\ArmouryCrate.UserSessionHelper.exe",
+      "cmdline": "C:\\Program Files\\ASUS\\Armoury Crate Service\\ArmouryCrate.UserSessionHelper.exe 0000000000000DCC 0000000000000B2C 0000000000000DB4 0000000000000F6C 0000000000000CD4 0000000000000E20 0000000000000E1C",
+      "create_time": 1781740547.8144975,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:2285",
+          "remote_address": "127.0.0.1:9012",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:49765",
+          "remote_address": "127.0.0.1:50100",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 17212,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 542.45,
+      "memory_percent": 1.66,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --video-capture-use-gpu-memory-buffer --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1764,i,8936249228679295994,1038196403452502567,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1768,i,9146764823246603292,2960785903927343306,4 --trace-process-track-uuid=3190708993808206286 --mojo-platform-channel-handle=4060 /prefetch:14",
+      "create_time": 1781740739.0050447,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:32805",
+          "remote_address": "100.21.131.68:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [
+        "high_ram",
+        "external_network_connection"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 18808,
+      "name": "NVIDIA Overlay.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 37.09,
+      "memory_percent": 0.11,
+      "exe": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe",
+      "cmdline": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --start-stack-profiler --user-data-dir=C:\\Users\\Gabriel\\AppData\\Local\\NVIDIA Corporation\\NVIDIA Overlay\\CefCache --field-trial-handle=2760,i,17634904274642347956,16818433296559183645,262144 --variations-seed-version --enable-logging=handle --log-file=2864 --mojo-platform-channel-handle=2892 /prefetch:11",
+      "create_time": 1781740550.4094162,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:35434",
+          "remote_address": "2803:f800:53::3:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 20068,
+      "name": "FluentWeather.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 22.52,
+      "memory_percent": 0.07,
+      "exe": "C:\\Program Files\\WindowsApps\\26937gabboxl.61420B4860E86_2.1.0.0_x64__28hndksafsg9t\\FluentWeather.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\26937gabboxl.61420B4860E86_2.1.0.0_x64__28hndksafsg9t\\FluentWeather.exe -ServerName:App.AppXb7bj2ew83xt0y4se8jf4ygb3n8mzvn4y.mca",
+      "create_time": 1781740621.6533203,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:7067",
+          "remote_address": "2600:1901:0:5e8a:::443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:28744",
+          "remote_address": "2600:1419:4e00:4::212:7f50:443",
+          "status": "CLOSE_WAIT"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 21964,
+      "name": "asus_framework.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 22.3,
+      "memory_percent": 0.07,
+      "exe": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+      "cmdline": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+      "create_time": 1781740557.9149468,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:1042",
+          "remote_address": "127.0.0.1:2232",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:1042",
+          "remote_address": "127.0.0.1:2230",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:1042",
+          "remote_address": "127.0.0.1:2235",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:1042",
+          "remote_address": "127.0.0.1:2298",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:2236",
+          "remote_address": "127.0.0.1:9013",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:2235",
+          "remote_address": "127.0.0.1:1042",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 22320,
+      "name": "ArmourySocketServer.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 3.32,
+      "memory_percent": 0.01,
+      "exe": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\ArmourySocketServer\\ArmourySocketServer.exe",
+      "cmdline": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\ArmourySocketServer\\ArmourySocketServer.exe",
+      "create_time": 1781740553.7240226,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:9013",
+          "remote_address": "127.0.0.1:2236",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:2232",
+          "remote_address": "127.0.0.1:1042",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:9012",
+          "remote_address": "127.0.0.1:2285",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 23080,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 512.7,
+      "memory_percent": 1.57,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "create_time": 1781740566.277306,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:34412",
+          "remote_address": "2607:6bc0::10:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:2268",
+          "remote_address": "34.107.243.93:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:34417",
+          "remote_address": "2606:50c0:8000::154:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:34419",
+          "remote_address": "140.82.112.25:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:2247",
+          "remote_address": "127.0.0.1:2248",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:2248",
+          "remote_address": "127.0.0.1:2247",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:34418",
+          "remote_address": "2606:50c0:8000::215:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:2260",
+          "remote_address": "2800:3f0:4004:80c::200e:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [
+        "high_ram",
+        "external_network_connection"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 23116,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 17.37,
+      "memory_percent": 0.05,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -parentBuildID 20260610172436 -prefsHandle 2132:46343 -prefMapHandle 2364:301035 -ipcHandle 2452 -initialChannelId {9c0066db-5a47-42a7-84a8-df6263647237} -parentPid 23080 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.23080 -crashHelperPid 0 -crashHelper 2476 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 2 socket",
+      "create_time": 1781740566.5465753,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:2249",
+          "remote_address": "127.0.0.1:2250",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:2250",
+          "remote_address": "127.0.0.1:2249",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 23504,
+      "name": "lghub_agent.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.07,
+      "memory_mb": 177.23,
+      "memory_percent": 0.54,
+      "exe": "C:\\Program Files\\LGHUB\\lghub_agent.exe",
+      "cmdline": "C:\\Program Files\\LGHUB\\lghub_agent.exe",
+      "create_time": 1781740631.7105772,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:60438",
+          "remote_address": "127.0.0.1:28194",
+          "status": "SYN_SENT"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 25372,
+      "name": "asus_framework.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 17.69,
+      "memory_percent": 0.05,
+      "exe": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+      "cmdline": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\asus_framework --field-trial-handle=1980,i,8609992494640979152,4644884217130532414,262144 --enable-features=EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation,WinDelaySpellcheckServiceInit --variations-seed-version --mojo-platform-channel-handle=3572 /prefetch:14",
+      "create_time": 1781740562.0734756,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:2298",
+          "remote_address": "127.0.0.1:1042",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 26548,
+      "name": "steam.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 102.88,
+      "memory_percent": 0.31,
+      "exe": "C:\\Program Files (x86)\\Steam\\steam.exe",
+      "cmdline": "C:\\Program Files (x86)\\Steam\\steam.exe -silent",
+      "create_time": 1781740565.006574,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:2275",
+          "remote_address": "127.0.0.1:2310",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:2415",
+          "remote_address": "155.133.255.164:27022",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:2276",
+          "remote_address": "127.0.0.1:2309",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [
+        "external_network_connection"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 28264,
+      "name": "steamwebhelper.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 35.27,
+      "memory_percent": 0.11,
+      "exe": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+      "cmdline": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=pt-BR --service-sandbox-type=none --start-stack-profiler --enable-chrome-runtime --user-data-dir=C:\\Users\\Gabriel\\AppData\\Local\\Steam\\htmlcache --user-agent-product=Valve Steam Client --buildid=1781041600 --steamid=0 --valve-initial-threadpool-size=8 --field-trial-handle=2084,i,9091574035380158987,3614618116616988226,262144 --disable-features=BlockPromptsIfIgnoredOften,DcheckIsFatal,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-logging=handle --log-file=2356 --mojo-platform-channel-handle=2352 /prefetch:11",
+      "create_time": 1781740567.3191252,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:2309",
+          "remote_address": "127.0.0.1:2276",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:2310",
+          "remote_address": "127.0.0.1:2275",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:34396",
+          "remote_address": "2803:f800:53::3:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 30484,
+      "name": "kpm.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 221.99,
+      "memory_percent": 0.68,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky Password Manager 25.1\\kpm.exe",
+      "cmdline": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky Password Manager 25.1\\kpm.exe autoStart",
+      "create_time": 1781740575.5369873,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:2368",
+          "remote_address": "127.0.0.1:2369",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:2372",
+          "remote_address": "81.19.104.105:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:2369",
+          "remote_address": "127.0.0.1:2368",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [
+        "external_network_connection"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 30792,
+      "name": "Codex.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 40.71,
+      "memory_percent": 0.12,
+      "exe": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.611.8604.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.611.8604.0_x64__2p2nqsd0c76g0\\app\\Codex.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=pt-BR --service-sandbox-type=none --standard-schemes=app --secure-schemes=app,sentry-ipc --bypasscsp-schemes=sentry-ipc --fetch-schemes=app,sentry-ipc --cors-schemes=sentry-ipc --streaming-schemes=app --no-pre-read-main-dll --start-stack-profiler --metrics-shmem-handle=2396,i,8813988056728111506,10391506823994244908,524288 --field-trial-handle=2220,i,8180317387660138079,3336193808227512022,262144 --disable-features=DropInputEventsWhilePaintHolding --variations-seed-version --pseudonymization-salt-handle=2224,i,14743123637581127912,12838151957912499896,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2456 /prefetch:11",
+      "create_time": 1781740675.091262,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:2598",
+          "remote_address": "2800:3f0:4003:c00::bc:5228",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:6c7f:4a93:fc32:b998:50682",
+          "remote_address": "2a06:98c1:310d::ac40:961c:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 32284,
+      "name": "pwsh.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 122.32,
+      "memory_percent": 0.37,
+      "exe": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "cmdline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe -noexit -command try { . \"c:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\out\\vs\\workbench\\contrib\\terminal\\common\\scripts\\shellIntegration.ps1\" } catch {}",
+      "create_time": 1781740740.2490757,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:60368",
+          "remote_address": "52.188.247.146:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "activity_flags": [
+        "external_network_connection"
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    }
+  ],
+  "suspicious_processes": []
+}

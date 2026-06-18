@@ -1,0 +1,205 @@
+{
+  "started_at": "2026-06-17T21:26:00",
+  "finished_at": "2026-06-17T21:26:41",
+  "duration_seconds": 40,
+  "samples_count": 9,
+  "averages": {
+    "cpu_usage": 3.11,
+    "ram_usage": 46.62,
+    "download_rate": 1740.22,
+    "upload_rate": 1556.0
+  },
+  "peaks": {
+    "cpu_usage": 4.9,
+    "ram_usage": 46.8,
+    "lowest_ram_available": 18238619648,
+    "download_rate": 5282,
+    "upload_rate": 4487,
+    "disk_usage": {
+      "C:\\": 74.9
+    }
+  },
+  "alerts": [],
+  "snapshots": [
+    {
+      "timestamp": "2026-06-17T21:26:00",
+      "cpu_usage": 4.0,
+      "ram_usage": 46.6,
+      "ram_available": 18300260352,
+      "disks": [
+        {
+          "partition": "C:\\",
+          "total": 2046903185408,
+          "used": 1533504143360,
+          "free": 513399042048,
+          "percent": 74.9
+        }
+      ],
+      "bytes_sent": 21677061,
+      "bytes_recv": 439985665,
+      "upload_rate": 0,
+      "download_rate": 0,
+      "alerts": []
+    },
+    {
+      "timestamp": "2026-06-17T21:26:06",
+      "cpu_usage": 2.3,
+      "ram_usage": 46.6,
+      "ram_available": 18302894080,
+      "disks": [
+        {
+          "partition": "C:\\",
+          "total": 2046903185408,
+          "used": 1533504200704,
+          "free": 513398984704,
+          "percent": 74.9
+        }
+      ],
+      "bytes_sent": 21684052,
+      "bytes_recv": 439987576,
+      "upload_rate": 1390,
+      "download_rate": 380,
+      "alerts": []
+    },
+    {
+      "timestamp": "2026-06-17T21:26:11",
+      "cpu_usage": 3.0,
+      "ram_usage": 46.6,
+      "ram_available": 18285264896,
+      "disks": [
+        {
+          "partition": "C:\\",
+          "total": 2046903185408,
+          "used": 1533504249856,
+          "free": 513398935552,
+          "percent": 74.9
+        }
+      ],
+      "bytes_sent": 21689661,
+      "bytes_recv": 439992495,
+      "upload_rate": 1116,
+      "download_rate": 978,
+      "alerts": []
+    },
+    {
+      "timestamp": "2026-06-17T21:26:16",
+      "cpu_usage": 3.1,
+      "ram_usage": 46.7,
+      "ram_available": 18274304000,
+      "disks": [
+        {
+          "partition": "C:\\",
+          "total": 2046903185408,
+          "used": 1533504188416,
+          "free": 513398996992,
+          "percent": 74.9
+        }
+      ],
+      "bytes_sent": 21690795,
+      "bytes_recv": 439994076,
+      "upload_rate": 225,
+      "download_rate": 314,
+      "alerts": []
+    },
+    {
+      "timestamp": "2026-06-17T21:26:21",
+      "cpu_usage": 2.9,
+      "ram_usage": 46.6,
+      "ram_available": 18293555200,
+      "disks": [
+        {
+          "partition": "C:\\",
+          "total": 2046903185408,
+          "used": 1533504245760,
+          "free": 513398939648,
+          "percent": 74.9
+        }
+      ],
+      "bytes_sent": 21713345,
+      "bytes_recv": 440020618,
+      "upload_rate": 4487,
+      "download_rate": 5282,
+      "alerts": []
+    },
+    {
+      "timestamp": "2026-06-17T21:26:26",
+      "cpu_usage": 2.8,
+      "ram_usage": 46.6,
+      "ram_available": 18294267904,
+      "disks": [
+        {
+          "partition": "C:\\",
+          "total": 2046903185408,
+          "used": 1533504245760,
+          "free": 513398939648,
+          "percent": 74.9
+        }
+      ],
+      "bytes_sent": 21724770,
+      "bytes_recv": 440034975,
+      "upload_rate": 2273,
+      "download_rate": 2857,
+      "alerts": []
+    },
+    {
+      "timestamp": "2026-06-17T21:26:31",
+      "cpu_usage": 2.4,
+      "ram_usage": 46.5,
+      "ram_available": 18317856768,
+      "disks": [
+        {
+          "partition": "C:\\",
+          "total": 2046903185408,
+          "used": 1533504286720,
+          "free": 513398898688,
+          "percent": 74.9
+        }
+      ],
+      "bytes_sent": 21731988,
+      "bytes_recv": 440037443,
+      "upload_rate": 1436,
+      "download_rate": 491,
+      "alerts": []
+    },
+    {
+      "timestamp": "2026-06-17T21:26:36",
+      "cpu_usage": 2.6,
+      "ram_usage": 46.6,
+      "ram_available": 18304032768,
+      "disks": [
+        {
+          "partition": "C:\\",
+          "total": 2046903185408,
+          "used": 1533504286720,
+          "free": 513398898688,
+          "percent": 74.9
+        }
+      ],
+      "bytes_sent": 21732495,
+      "bytes_recv": 440038317,
+      "upload_rate": 100,
+      "download_rate": 173,
+      "alerts": []
+    },
+    {
+      "timestamp": "2026-06-17T21:26:41",
+      "cpu_usage": 4.9,
+      "ram_usage": 46.8,
+      "ram_available": 18238619648,
+      "disks": [
+        {
+          "partition": "C:\\",
+          "total": 2046903185408,
+          "used": 1533504286720,
+          "free": 513398898688,
+          "percent": 74.9
+        }
+      ],
+      "bytes_sent": 21747457,
+      "bytes_recv": 440064387,
+      "upload_rate": 2977,
+      "download_rate": 5187,
+      "alerts": []
+    }
+  ]
+}

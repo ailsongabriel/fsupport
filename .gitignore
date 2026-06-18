@@ -5,6 +5,7 @@ storage/logs/*
 storage/reports/*
 storage/processes/*
 storage/monitoring/*
+storage/diagnostics/*
 .vscode/
 .idea/
 teste.py

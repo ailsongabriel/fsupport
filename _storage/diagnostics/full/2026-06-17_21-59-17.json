@@ -1,0 +1,62 @@
+{
+  "type": "full",
+  "generated_at": "2026-06-17T21:59:17",
+  "status": "review_recommended",
+  "summary": "Foram encontrados pontos de melhoria, mas sem indicio critico no momento.",
+  "findings": [
+    {
+      "severity": "warning",
+      "category": "performance",
+      "title": "Processos consumindo RAM",
+      "evidence": "Processos em destaque por RAM: firefox.exe, firefox.exe, Code.exe.",
+      "recommendation": "Reduzir abas/programas abertos, revisar extensoes e avaliar aumento de RAM se o uso for comum.",
+      "recommendation_type": "hardware"
+    },
+    {
+      "severity": "info",
+      "category": "network",
+      "title": "Processos com conexoes de rede",
+      "evidence": "23 processo(s) com conexoes de rede foram registrados.",
+      "recommendation": "Usar esta lista como apoio; navegadores e apps de comunicacao podem ser normais.",
+      "recommendation_type": "security"
+    }
+  ],
+  "recommended_actions": [
+    {
+      "category": "hardware",
+      "priority": "warning",
+      "action": "Reduzir abas/programas abertos, revisar extensoes e avaliar aumento de RAM se o uso for comum."
+    },
+    {
+      "category": "security",
+      "priority": "info",
+      "action": "Usar esta lista como apoio; navegadores e apps de comunicacao podem ser normais."
+    }
+  ],
+  "data_sources": {
+    "monitoring_latest_session": true,
+    "processes_latest_scan": true,
+    "current_resources": true,
+    "security": true,
+    "startup": true,
+    "system": true
+  },
+  "collection_errors": [],
+  "report_ready": {
+    "formats": [
+      "pdf",
+      "txt",
+      "md"
+    ],
+    "markdown": "# Diagnostico completo\n\nGerado em: 2026-06-17T21:59:17\nStatus: review_recommended\n\n## Resumo\n\nForam encontrados pontos de melhoria, mas sem indicio critico no momento.\n\n## Achados\n\n### Processos consumindo RAM\n\n- Severidade: warning\n- Categoria: performance\n- Evidencia: Processos em destaque por RAM: firefox.exe, firefox.exe, Code.exe.\n- Recomendacao: Reduzir abas/programas abertos, revisar extensoes e avaliar aumento de RAM se o uso for comum.\n\n### Processos com conexoes de rede\n\n- Severidade: info\n- Categoria: network\n- Evidencia: 23 processo(s) com conexoes de rede foram registrados.\n- Recomendacao: Usar esta lista como apoio; navegadores e apps de comunicacao podem ser normais.\n\n## Fontes de dados\n\n- Monitoramento: sim\n- Processos: sim\n- Recursos atuais: sim\n- Seguranca: sim\n- Inicializacao: sim\n\n## Maquina\n\n- Hostname: Noslia\n- Usuario: Gabriel\n- Sistema: Windows 11\n- Arquitetura: 64bit\n",
+    "text": "Foram encontrados pontos de melhoria, mas sem indicio critico no momento.\n\nAchados:\n1. Processos consumindo RAM (warning)\n   Evidencia: Processos em destaque por RAM: firefox.exe, firefox.exe, Code.exe.\n   Recomendacao: Reduzir abas/programas abertos, revisar extensoes e avaliar aumento de RAM se o uso for comum.\n2. Processos com conexoes de rede (info)\n   Evidencia: 23 processo(s) com conexoes de rede foram registrados.\n   Recomendacao: Usar esta lista como apoio; navegadores e apps de comunicacao podem ser normais."
+  },
+  "saved_paths": {
+    "latest": "storage\\diagnostics\\latest_full.json",
+    "history": "storage\\diagnostics\\full\\2026-06-17_21-59-17.json",
+    "markdown_latest": "storage\\diagnostics\\latest_full.md",
+    "markdown_history": "storage\\diagnostics\\full\\2026-06-17_21-59-17.md",
+    "text_latest": "storage\\diagnostics\\latest_full.txt",
+    "text_history": "storage\\diagnostics\\full\\2026-06-17_21-59-17.txt"
+  }
+}

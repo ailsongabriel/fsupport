@@ -1,0 +1,2362 @@
+{
+  "collected_at": "2026-06-17T16:32:42",
+  "summary": {
+    "total_processes": 358,
+    "top_cpu_count": 10,
+    "top_ram_count": 10,
+    "network_processes_count": 28,
+    "suspicious_count": 48
+  },
+  "top_cpu": [
+    {
+      "pid": 0,
+      "name": "System Idle Process",
+      "username": "NT AUTHORITY\\SYSTEM",
+      "cpu_percent": 2336.4,
+      "memory_mb": 0.01,
+      "memory_percent": 0.0,
+      "exe": null,
+      "cmdline": null,
+      "create_time": 0.0,
+      "connections": [],
+      "risk_flags": [
+        "high_cpu",
+        "executable_path_unavailable"
+      ],
+      "risk_score": 30,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 48732,
+      "name": "python.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 55.6,
+      "memory_mb": 42.46,
+      "memory_percent": 0.13,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "cmdline": "python app.py",
+      "create_time": 1781724757.7892313,
+      "connections": [],
+      "risk_flags": [
+        "high_cpu",
+        "unusual_path"
+      ],
+      "risk_score": 40,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 4,
+      "name": "System",
+      "username": "NT AUTHORITY\\SYSTEM",
+      "cpu_percent": 7.2,
+      "memory_mb": 17.07,
+      "memory_percent": 0.05,
+      "exe": "",
+      "cmdline": null,
+      "create_time": 0.0,
+      "connections": [],
+      "risk_flags": [
+        "executable_path_unavailable"
+      ],
+      "risk_score": 10,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 26700,
+      "name": "cam_helper.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 5.8,
+      "memory_mb": 43.67,
+      "memory_percent": 0.13,
+      "exe": "C:\\Program Files\\NZXT CAM\\resources\\app.asar.unpacked\\node_modules\\@nzxt\\cam-core\\dist\\cam_helper.exe",
+      "cmdline": "\\\\?\\C:\\Program Files\\NZXT CAM\\resources\\app.asar.unpacked\\node_modules\\@nzxt\\cam-core\\dist\\cam_helper.exe --transfer-server 924c1910-5e73-42c6-b2c9-c6efa627b5b3 --refresh-server 9454fe5c-85ef-4f36-9bf8-3ab4d1338ee4 --run-id 21dbd5f2713042f8896f4d945c93cd8f --app-version NZXT CAM@4.76.3 --environment production --log-directory C:\\Users\\Gabriel\\AppData\\Roaming\\NZXT CAM\\logs --log-level INFO --app-instance-id 3d345d90-0db7-4935-96ff-fad0d149a3d0",
+      "create_time": 1781716862.0798757,
+      "connections": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 26712,
+      "name": "NZXT CAM.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 5.1,
+      "memory_mb": 170.64,
+      "memory_percent": 0.52,
+      "exe": "C:\\Program Files\\NZXT CAM\\NZXT CAM.exe",
+      "cmdline": "C:\\Program Files\\NZXT CAM\\NZXT CAM.exe --type=renderer --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\NZXT CAM --secure-schemes=sentry-ipc --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=sentry-ipc --app-user-model-id=NZXT.CAM --app-path=C:\\Program Files\\NZXT CAM\\resources\\app.asar --no-sandbox --no-zygote --js-flags=--expose-gc --disable-gpu-compositing --video-capture-use-gpu-memory-buffer --lang=pt-BR --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=6 --time-ticks-at-unix-epoch=-1781716823180830 --launch-time-ticks=37458183 --field-trial-handle=3608,i,6277909183527504300,15625670011452771804,262144 --disable-features=SpareRendererForSitePerProcess,Vulkan,WinDelaySpellcheckServiceInit,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --mojo-platform-channel-handle=4048 /prefetch:1",
+      "create_time": 1781716860.6538277,
+      "connections": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 41112,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 4.1,
+      "memory_mb": 501.5,
+      "memory_percent": 1.53,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 11020:50286 -prefMapHandle 5304:301071 -jsInitHandle 12644:156120 -parentBuildID 20260610172436 -ipcHandle 11740 -initialChannelId {5e444257-ee35-475e-9f1c-8fddce3721d6} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 13108 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 90 tab",
+      "create_time": 1781722195.7035098,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 16580,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 3.8,
+      "memory_mb": 285.06,
+      "memory_percent": 0.87,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 8336:50043 -prefMapHandle 5560:301071 -jsInitHandle 10416:156120 -parentBuildID 20260610172436 -ipcHandle 11408 -initialChannelId {2842fd1a-ca16-4b45-b71d-2013611c2186} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 8420 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 54 tab",
+      "create_time": 1781718399.2598252,
+      "connections": [],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 28200,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 3.6,
+      "memory_mb": 604.18,
+      "memory_percent": 1.85,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "create_time": 1781716879.121669,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:47706",
+          "remote_address": "4.228.31.150:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:63762",
+          "remote_address": "140.82.114.25:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:60406",
+          "remote_address": "185.70.42.37:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:53448",
+          "remote_address": "2800:3f0:4001:811::200e:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12270",
+          "remote_address": "127.0.0.1:12271",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:39809",
+          "remote_address": "34.107.243.93:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:5059",
+          "remote_address": "2a06:98c1:3108::ac40:94eb:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47709",
+          "remote_address": "2606:50c0:8000::215:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47707",
+          "remote_address": "2606:50c0:8001::154:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12271",
+          "remote_address": "127.0.0.1:12270",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "high_ram",
+        "external_network_connection"
+      ],
+      "risk_score": 40,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 48628,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 2.7,
+      "memory_mb": 726.03,
+      "memory_percent": 2.22,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 12024:50286 -prefMapHandle 8368:301071 -jsInitHandle 8244:156120 -parentBuildID 20260610172436 -ipcHandle 10208 -initialChannelId {0100b86e-e5cd-4df9-897b-86059d9481cd} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 13024 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 93 tab",
+      "create_time": 1781722373.9035816,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 5928,
+      "name": "avp.exe",
+      "username": null,
+      "cpu_percent": 1.7,
+      "memory_mb": 37.53,
+      "memory_percent": 0.11,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky 21.25\\avp.exe",
+      "cmdline": null,
+      "create_time": 1781716838.5077205,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:49679",
+          "remote_address": "127.0.0.1:49680",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:49683",
+          "remote_address": "185.201.1.226:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:49680",
+          "remote_address": "127.0.0.1:49679",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    }
+  ],
+  "top_ram": [
+    {
+      "pid": 3584,
+      "name": "MemCompression",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 1870.73,
+      "memory_percent": 5.72,
+      "exe": "MemCompression",
+      "cmdline": null,
+      "create_time": 1781716837.9619496,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 5728,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 901.52,
+      "memory_percent": 2.76,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 10792:50043 -prefMapHandle 8312:301071 -jsInitHandle 9128:156120 -parentBuildID 20260610172436 -ipcHandle 9392 -initialChannelId {445258fa-9951-4a7c-a1b4-c21018c0a93a} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 4808 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 49 tab",
+      "create_time": 1781718317.8461893,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 48628,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 2.7,
+      "memory_mb": 726.03,
+      "memory_percent": 2.22,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 12024:50286 -prefMapHandle 8368:301071 -jsInitHandle 8244:156120 -parentBuildID 20260610172436 -ipcHandle 10208 -initialChannelId {0100b86e-e5cd-4df9-897b-86059d9481cd} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 13024 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 93 tab",
+      "create_time": 1781722373.9035816,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 20152,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 647.35,
+      "memory_percent": 1.98,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 4712:46483 -prefMapHandle 4716:301071 -jsInitHandle 4720:156120 -parentBuildID 20260610172436 -ipcHandle 4728 -initialChannelId {a71f3319-0b62-432e-acc0-0fb6613a95e4} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 4736 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 5 tab",
+      "create_time": 1781716879.9340615,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 28200,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 3.6,
+      "memory_mb": 604.18,
+      "memory_percent": 1.85,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "create_time": 1781716879.121669,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:47706",
+          "remote_address": "4.228.31.150:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:63762",
+          "remote_address": "140.82.114.25:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:60406",
+          "remote_address": "185.70.42.37:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:53448",
+          "remote_address": "2800:3f0:4001:811::200e:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12270",
+          "remote_address": "127.0.0.1:12271",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:39809",
+          "remote_address": "34.107.243.93:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:5059",
+          "remote_address": "2a06:98c1:3108::ac40:94eb:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47709",
+          "remote_address": "2606:50c0:8000::215:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47707",
+          "remote_address": "2606:50c0:8001::154:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12271",
+          "remote_address": "127.0.0.1:12270",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "high_ram",
+        "external_network_connection"
+      ],
+      "risk_score": 40,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 41112,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 4.1,
+      "memory_mb": 501.5,
+      "memory_percent": 1.53,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 11020:50286 -prefMapHandle 5304:301071 -jsInitHandle 12644:156120 -parentBuildID 20260610172436 -ipcHandle 11740 -initialChannelId {5e444257-ee35-475e-9f1c-8fddce3721d6} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 13108 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 90 tab",
+      "create_time": 1781722195.7035098,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 6216,
+      "name": "MsMpEng.exe",
+      "username": null,
+      "cpu_percent": 0.8,
+      "memory_mb": 430.6,
+      "memory_percent": 1.32,
+      "exe": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26050.15-0\\MsMpEng.exe",
+      "cmdline": null,
+      "create_time": 1781716838.5264292,
+      "connections": [],
+      "risk_flags": [
+        "high_ram",
+        "unusual_path"
+      ],
+      "risk_score": 35,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 16480,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.8,
+      "memory_mb": 400.61,
+      "memory_percent": 1.23,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 8944:50124 -prefMapHandle 1684:301071 -jsInitHandle 10544:156120 -parentBuildID 20260610172436 -ipcHandle 11808 -initialChannelId {fc65df6d-c21e-4074-9338-083ff93096e7} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 10980 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 56 tab",
+      "create_time": 1781718421.0233283,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 31360,
+      "name": "msedgewebview2.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 389.44,
+      "memory_percent": 1.19,
+      "exe": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\149.0.4022.69\\msedgewebview2.exe",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\149.0.4022.69\\msedgewebview2.exe --type=renderer --noerrdialogs --user-data-dir=C:\\Users\\Gabriel\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView --webview-exe-name=WhatsApp.Root.exe --webview-exe-version=1.0.0 --embedded-browser-webview=1 --video-capture-use-gpu-memory-buffer --lang=pt-BR --js-flags=--expose-gc --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=9 --time-ticks-at-unix-epoch=-1781716823190292 --launch-time-ticks=63005804 --skip-read-main-dll --metrics-shmem-handle=5860,i,16185209221393206763,6731447973147620846,2097152 --field-trial-handle=2084,i,4088219676988972386,5363612434969159933,262144 --variations-seed-version --pseudonymization-salt-handle=2096,i,14238267624488929924,7319434244024731893,4 --trace-process-track-uuid=3190708994745248135 --mojo-platform-channel-handle=5888 /pfhostedapp:5c3ece7470d3d99350783b03cbe57ba62174e1b4 /prefetch:1",
+      "create_time": 1781716886.1988504,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 3192,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 379.47,
+      "memory_percent": 1.16,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 11112:50230 -prefMapHandle 8208:301071 -jsInitHandle 8036:156120 -parentBuildID 20260610172436 -ipcHandle 12312 -initialChannelId {8d7054af-d24b-40dd-b69f-469627a437ee} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 7504 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 72 tab",
+      "create_time": 1781720552.1456783,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    }
+  ],
+  "network_processes": [
+    {
+      "pid": 3336,
+      "name": "FluentWeather.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 27.83,
+      "memory_percent": 0.09,
+      "exe": "C:\\Program Files\\WindowsApps\\26937gabboxl.61420B4860E86_2.1.0.0_x64__28hndksafsg9t\\FluentWeather.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\26937gabboxl.61420B4860E86_2.1.0.0_x64__28hndksafsg9t\\FluentWeather.exe -ServerName:App.AppXb7bj2ew83xt0y4se8jf4ygb3n8mzvn4y.mca",
+      "create_time": 1781716957.650058,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:14110",
+          "remote_address": "2600:1901:0:5e8a:::443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:48054",
+          "remote_address": "2600:1419:6200:59::17c1:764d:443",
+          "status": "CLOSE_WAIT"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 5280,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 17.16,
+      "memory_percent": 0.05,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -parentBuildID 20260610172436 -prefsHandle 3016:46276 -prefMapHandle 2988:301071 -ipcHandle 2980 -initialChannelId {f6402431-fea2-49ff-9d96-42a2bb1cab81} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 2896 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 2 socket",
+      "create_time": 1781716879.4687128,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:12273",
+          "remote_address": "127.0.0.1:12272",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12272",
+          "remote_address": "127.0.0.1:12273",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 5712,
+      "name": "ArmouryCrate.UserSessionHelper.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 75.55,
+      "memory_percent": 0.23,
+      "exe": "C:\\Program Files\\ASUS\\Armoury Crate Service\\ArmouryCrate.UserSessionHelper.exe",
+      "cmdline": "C:\\Program Files\\ASUS\\Armoury Crate Service\\ArmouryCrate.UserSessionHelper.exe 0000000000000AFC 0000000000000AF4 0000000000000AF8 0000000000000B00 0000000000000B04 0000000000000B08 0000000000000B0C",
+      "create_time": 1781716842.440082,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:12203",
+          "remote_address": "127.0.0.1:9012",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:49700",
+          "remote_address": "127.0.0.1:50100",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 5872,
+      "name": "ArmouryCrate.Service.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 51.57,
+      "memory_percent": 0.16,
+      "exe": "C:\\Program Files\\ASUS\\Armoury Crate Service\\ArmouryCrate.Service.exe",
+      "cmdline": null,
+      "create_time": 1781716838.504855,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:50100",
+          "remote_address": "127.0.0.1:49700",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 5928,
+      "name": "avp.exe",
+      "username": null,
+      "cpu_percent": 1.7,
+      "memory_mb": 37.53,
+      "memory_percent": 0.11,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky 21.25\\avp.exe",
+      "cmdline": null,
+      "create_time": 1781716838.5077205,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:49679",
+          "remote_address": "127.0.0.1:49680",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:49683",
+          "remote_address": "185.201.1.226:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:49680",
+          "remote_address": "127.0.0.1:49679",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 5980,
+      "name": "kpm_service.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 33.1,
+      "memory_percent": 0.1,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky Password Manager 25.1\\kpm_service.exe",
+      "cmdline": null,
+      "create_time": 1781716838.5117843,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:26420",
+          "remote_address": "82.202.185.148:443",
+          "status": "CLOSE_WAIT"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 6012,
+      "name": "ROGLiveService.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 33.57,
+      "memory_percent": 0.1,
+      "exe": "C:\\Program Files\\ASUS\\ROG Live Service\\ROGLiveService.exe",
+      "cmdline": null,
+      "create_time": 1781716838.5130756,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:13030",
+          "remote_address": "127.0.0.1:49673",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:49673",
+          "remote_address": "127.0.0.1:13030",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 6088,
+      "name": "svchost.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 24.25,
+      "memory_percent": 0.07,
+      "exe": "C:\\Windows\\System32\\svchost.exe",
+      "cmdline": null,
+      "create_time": 1781716838.5157826,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:49699",
+          "remote_address": "2603:1030:210:f:::443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 11956,
+      "name": "AcPowerNotification.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.8,
+      "memory_mb": 13.02,
+      "memory_percent": 0.04,
+      "exe": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\AcPowerNotification\\AcPowerNotification.exe",
+      "cmdline": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\AcPowerNotification\\AcPowerNotification.exe",
+      "create_time": 1781716842.170051,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:12175",
+          "remote_address": "127.0.0.1:1042",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 18040,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 48.15,
+      "memory_percent": 0.15,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1768,i,6153041314166883791,1503029439126355094,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1776,i,607835451813549326,16384436871907733952,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2016 /prefetch:11",
+      "create_time": 1781721219.1667833,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:59972",
+          "remote_address": "40.71.11.167:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:31289",
+          "remote_address": "13.89.179.10:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:23920",
+          "remote_address": "140.82.112.22:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection",
+        "unusual_path"
+      ],
+      "risk_score": 45,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 19432,
+      "name": "iCloudHome.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 111.99,
+      "memory_percent": 0.34,
+      "exe": "C:\\Program Files\\WindowsApps\\AppleInc.iCloud_15.8.127.0_x64__nzyj5cx40ttqa\\iCloud\\iCloudHome.exe",
+      "cmdline": "iCloudHome-AppX.exe",
+      "create_time": 1781717689.1669393,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:14984",
+          "remote_address": "17.157.64.66:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:14980",
+          "remote_address": "2620:149:1369::b:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "192.168.1.6:14987",
+          "remote_address": "17.157.64.66:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:14979",
+          "remote_address": "2620:149:1369::b:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:14982",
+          "remote_address": "2620:149:1369::b:443",
+          "status": "CLOSE_WAIT"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 20604,
+      "name": "NVIDIA Overlay.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 34.01,
+      "memory_percent": 0.1,
+      "exe": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe",
+      "cmdline": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --start-stack-profiler --user-data-dir=C:\\Users\\Gabriel\\AppData\\Local\\NVIDIA Corporation\\NVIDIA Overlay\\CefCache --field-trial-handle=2976,i,12222575492474146278,17188637529811914493,262144 --variations-seed-version --enable-logging=handle --log-file=2060 --mojo-platform-channel-handle=2560 /prefetch:11",
+      "create_time": 1781716846.5306208,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:12177",
+          "remote_address": "72.25.64.2:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:12164",
+          "remote_address": "2803:f800:53::3:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 21852,
+      "name": "ArmourySocketServer.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 0.82,
+      "memory_percent": 0.0,
+      "exe": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\ArmourySocketServer\\ArmourySocketServer.exe",
+      "cmdline": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\dll\\ArmourySocketServer\\ArmourySocketServer.exe",
+      "create_time": 1781716847.852857,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:12176",
+          "remote_address": "127.0.0.1:1042",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:9012",
+          "remote_address": "127.0.0.1:12203",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:9013",
+          "remote_address": "127.0.0.1:12181",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 23200,
+      "name": "asus_framework.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 12.51,
+      "memory_percent": 0.04,
+      "exe": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+      "cmdline": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+      "create_time": 1781716852.6821232,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:1042",
+          "remote_address": "127.0.0.1:12207",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12180",
+          "remote_address": "127.0.0.1:1042",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:1042",
+          "remote_address": "127.0.0.1:12175",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12181",
+          "remote_address": "127.0.0.1:9013",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:1042",
+          "remote_address": "127.0.0.1:12180",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:1042",
+          "remote_address": "127.0.0.1:12176",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 24856,
+      "name": "asus_framework.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 4.49,
+      "memory_percent": 0.01,
+      "exe": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe",
+      "cmdline": "C:\\Program Files (x86)\\ASUS\\ArmouryDevice\\asus_framework.exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\asus_framework --field-trial-handle=1948,i,4003092817611495265,10323499761596762272,262144 --enable-features=EnableTransparentHwndEnlargement,PdfUseShowSaveFilePicker --disable-features=ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation,WinDelaySpellcheckServiceInit --variations-seed-version --mojo-platform-channel-handle=3656 /prefetch:14",
+      "create_time": 1781716856.4095306,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:12207",
+          "remote_address": "127.0.0.1:1042",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 25240,
+      "name": "steam.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.7,
+      "memory_mb": 82.71,
+      "memory_percent": 0.25,
+      "exe": "C:\\Program Files (x86)\\Steam\\steam.exe",
+      "cmdline": "C:\\Program Files (x86)\\Steam\\steam.exe -silent",
+      "create_time": 1781716857.7125568,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:12261",
+          "remote_address": "155.133.255.100:27020",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12184",
+          "remote_address": "127.0.0.1:12201",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12186",
+          "remote_address": "127.0.0.1:12200",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 25996,
+      "name": "steamwebhelper.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 30.42,
+      "memory_percent": 0.09,
+      "exe": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe",
+      "cmdline": "C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=pt-BR --service-sandbox-type=none --start-stack-profiler --enable-chrome-runtime --user-data-dir=C:\\Users\\Gabriel\\AppData\\Local\\Steam\\htmlcache --user-agent-product=Valve Steam Client --buildid=1781041600 --steamid=0 --valve-initial-threadpool-size=8 --field-trial-handle=2376,i,12867267863961272450,18235897161201995436,262144 --disable-features=BlockPromptsIfIgnoredOften,DcheckIsFatal,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-logging=handle --log-file=2168 --mojo-platform-channel-handle=2184 /prefetch:11",
+      "create_time": 1781716858.766749,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:12201",
+          "remote_address": "127.0.0.1:12184",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12200",
+          "remote_address": "127.0.0.1:12186",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 27048,
+      "name": "kpm.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.7,
+      "memory_mb": 168.38,
+      "memory_percent": 0.52,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky Password Manager 25.1\\kpm.exe",
+      "cmdline": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky Password Manager 25.1\\kpm.exe autoStart",
+      "create_time": 1781716861.156373,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:12230",
+          "remote_address": "127.0.0.1:12231",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:26389",
+          "remote_address": "37.203.128.51:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:12233",
+          "remote_address": "212.73.235.47:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12231",
+          "remote_address": "127.0.0.1:12230",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:26403",
+          "remote_address": "185.201.1.99:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "192.168.1.6:26390",
+          "remote_address": "37.203.128.51:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 28200,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 3.6,
+      "memory_mb": 604.18,
+      "memory_percent": 1.85,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "create_time": 1781716879.121669,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:47706",
+          "remote_address": "4.228.31.150:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:63762",
+          "remote_address": "140.82.114.25:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:60406",
+          "remote_address": "185.70.42.37:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:53448",
+          "remote_address": "2800:3f0:4001:811::200e:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12270",
+          "remote_address": "127.0.0.1:12271",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:39809",
+          "remote_address": "34.107.243.93:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:5059",
+          "remote_address": "2a06:98c1:3108::ac40:94eb:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47709",
+          "remote_address": "2606:50c0:8000::215:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47707",
+          "remote_address": "2606:50c0:8001::154:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12271",
+          "remote_address": "127.0.0.1:12270",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "high_ram",
+        "external_network_connection"
+      ],
+      "risk_score": 40,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 29048,
+      "name": "iCloudCKKS.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 36.6,
+      "memory_percent": 0.11,
+      "exe": "C:\\Program Files\\WindowsApps\\AppleInc.iCloud_15.8.127.0_x64__nzyj5cx40ttqa\\iCloud\\iCloudCKKS.exe",
+      "cmdline": "iCloudCKKS-AppX.exe",
+      "create_time": 1781717690.2304313,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47753",
+          "remote_address": "2620:149:1369::4:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 29324,
+      "name": "WhatsApp.Root.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 1.4,
+      "memory_mb": 339.5,
+      "memory_percent": 1.04,
+      "exe": "C:\\Program Files\\WindowsApps\\5319275A.WhatsAppDesktop_2.2620.102.0_x64__cv1g1gvanyjgm\\WhatsApp.Root.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\5319275A.WhatsAppDesktop_2.2620.102.0_x64__cv1g1gvanyjgm\\WhatsApp.Root.exe",
+      "create_time": 1781716883.707961,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47704",
+          "remote_address": "2a03:2880:f205:2c5:face:b00c:0:167:443",
+          "status": "CLOSE_WAIT"
+        }
+      ],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 29616,
+      "name": "iCloudDrive.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 59.25,
+      "memory_percent": 0.18,
+      "exe": "C:\\Program Files\\WindowsApps\\AppleInc.iCloud_15.8.127.0_x64__nzyj5cx40ttqa\\iCloud\\iCloudDrive.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\AppleInc.iCloud_15.8.127.0_x64__nzyj5cx40ttqa\\iCloud\\iCloudDrive.exe -Embedding",
+      "create_time": 1781717688.0414665,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47747",
+          "remote_address": "2620:149:1369::4:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 30288,
+      "name": "msedgewebview2.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 41.82,
+      "memory_percent": 0.13,
+      "exe": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\149.0.4022.69\\msedgewebview2.exe",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\149.0.4022.69\\msedgewebview2.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=pt-BR --service-sandbox-type=none --noerrdialogs --user-data-dir=C:\\Users\\Gabriel\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView --webview-exe-name=WhatsApp.Root.exe --webview-exe-version=1.0.0 --embedded-browser-webview=1 --startup-read-main-dll --metrics-shmem-handle=2296,i,6301512272150002497,13252744856410027684,524288 --field-trial-handle=2084,i,4088219676988972386,5363612434969159933,262144 --variations-seed-version --pseudonymization-salt-handle=2096,i,14238267624488929924,7319434244024731893,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2356 /prefetch:11 /pfhostedapp:5c3ece7470d3d99350783b03cbe57ba62174e1b4",
+      "create_time": 1781716885.3871732,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:9988",
+          "remote_address": "2a03:2880:f205:2c5:face:b00c:0:167:5222",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:14600",
+          "remote_address": "2803:f800:53::3:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 32656,
+      "name": "APSDaemon.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 22.41,
+      "memory_percent": 0.07,
+      "exe": "C:\\Program Files\\WindowsApps\\AppleInc.iCloud_15.8.127.0_x64__nzyj5cx40ttqa\\iCloud\\APSDaemon.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\AppleInc.iCloud_15.8.127.0_x64__nzyj5cx40ttqa\\iCloud\\APSDaemon.exe -Embedding",
+      "create_time": 1781717688.3792884,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:14995",
+          "remote_address": "17.249.252.4:5223",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 33044,
+      "name": "ksde.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 16.62,
+      "memory_percent": 0.05,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky VPN 5.25\\ksde.exe",
+      "cmdline": null,
+      "create_time": 1781716963.047111,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:14120",
+          "remote_address": "127.0.0.1:14121",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:14122",
+          "remote_address": "81.19.104.102:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:26452",
+          "remote_address": "82.202.184.193:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "127.0.0.1:14121",
+          "remote_address": "127.0.0.1:14120",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 36028,
+      "name": "Codex.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 38.67,
+      "memory_percent": 0.12,
+      "exe": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.611.8604.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.611.8604.0_x64__2p2nqsd0c76g0\\app\\Codex.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=pt-BR --service-sandbox-type=none --standard-schemes=app --secure-schemes=app,sentry-ipc --bypasscsp-schemes=sentry-ipc --fetch-schemes=app,sentry-ipc --cors-schemes=sentry-ipc --streaming-schemes=app --no-pre-read-main-dll --start-stack-profiler --metrics-shmem-handle=2520,i,15905939042970417442,2251671966564543552,524288 --field-trial-handle=2236,i,11649781863872406673,15210344292308876189,262144 --disable-features=DropInputEventsWhilePaintHolding --variations-seed-version --pseudonymization-salt-handle=2240,i,10174411548823319174,12240562206295070024,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2524 /prefetch:11",
+      "create_time": 1781721211.506811,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:43127",
+          "remote_address": "2a06:98c1:310d::ac40:961c:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:25898",
+          "remote_address": "2800:3f0:4003:c00::bc:5228",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    },
+    {
+      "pid": 37228,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 375.3,
+      "memory_percent": 1.15,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --video-capture-use-gpu-memory-buffer --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1768,i,6153041314166883791,1503029439126355094,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1776,i,607835451813549326,16384436871907733952,4 --trace-process-track-uuid=3190708991934122588 --mojo-platform-channel-handle=3164 /prefetch:14",
+      "create_time": 1781721220.1436613,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:12623",
+          "remote_address": "100.21.131.68:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "high_ram",
+        "external_network_connection",
+        "unusual_path"
+      ],
+      "risk_score": 60,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 37864,
+      "name": "codex.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.7,
+      "memory_mb": 124.2,
+      "memory_percent": 0.38,
+      "exe": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.611.8604.0_x64__2p2nqsd0c76g0\\app\\resources\\codex.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.611.8604.0_x64__2p2nqsd0c76g0\\app\\resources\\codex.exe app-server --analytics-default-enabled",
+      "create_time": 1781721300.5687354,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:33891",
+          "remote_address": "2a06:98c1:310b::ac40:9bd1:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47694",
+          "remote_address": "2a06:98c1:3100::6812:202f:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47688",
+          "remote_address": "2a06:98c1:3100::6812:202f:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:43148",
+          "remote_address": "2a06:98c1:3100::6812:202f:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47734",
+          "remote_address": "2a06:98c1:3100::6812:202f:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47359",
+          "remote_address": "2a06:98c1:3100::6812:202f:443",
+          "status": "CLOSE_WAIT"
+        }
+      ],
+      "risk_flags": [],
+      "risk_score": 0,
+      "recommendation": null
+    }
+  ],
+  "suspicious_processes": [
+    {
+      "pid": 37228,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 375.3,
+      "memory_percent": 1.15,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --dns-result-order=ipv4first --experimental-network-inspection --inspect-port=0 --video-capture-use-gpu-memory-buffer --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1768,i,6153041314166883791,1503029439126355094,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1776,i,607835451813549326,16384436871907733952,4 --trace-process-track-uuid=3190708991934122588 --mojo-platform-channel-handle=3164 /prefetch:14",
+      "create_time": 1781721220.1436613,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:12623",
+          "remote_address": "100.21.131.68:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "high_ram",
+        "external_network_connection",
+        "unusual_path"
+      ],
+      "risk_score": 60,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 18040,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 48.15,
+      "memory_percent": 0.15,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1768,i,6153041314166883791,1503029439126355094,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1776,i,607835451813549326,16384436871907733952,4 --trace-process-track-uuid=3190708989122997041 --mojo-platform-channel-handle=2016 /prefetch:11",
+      "create_time": 1781721219.1667833,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:59972",
+          "remote_address": "40.71.11.167:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:31289",
+          "remote_address": "13.89.179.10:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:23920",
+          "remote_address": "140.82.112.22:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection",
+        "unusual_path"
+      ],
+      "risk_score": 45,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 28200,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 3.6,
+      "memory_mb": 604.18,
+      "memory_percent": 1.85,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "create_time": 1781716879.121669,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:47706",
+          "remote_address": "4.228.31.150:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:63762",
+          "remote_address": "140.82.114.25:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:60406",
+          "remote_address": "185.70.42.37:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:53448",
+          "remote_address": "2800:3f0:4001:811::200e:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12270",
+          "remote_address": "127.0.0.1:12271",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:39809",
+          "remote_address": "34.107.243.93:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:5059",
+          "remote_address": "2a06:98c1:3108::ac40:94eb:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47709",
+          "remote_address": "2606:50c0:8000::215:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47707",
+          "remote_address": "2606:50c0:8001::154:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12271",
+          "remote_address": "127.0.0.1:12270",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "high_ram",
+        "external_network_connection"
+      ],
+      "risk_score": 40,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 48732,
+      "name": "python.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 55.6,
+      "memory_mb": 42.46,
+      "memory_percent": 0.13,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "cmdline": "python app.py",
+      "create_time": 1781724757.7892313,
+      "connections": [],
+      "risk_flags": [
+        "high_cpu",
+        "unusual_path"
+      ],
+      "risk_score": 40,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 6216,
+      "name": "MsMpEng.exe",
+      "username": null,
+      "cpu_percent": 0.8,
+      "memory_mb": 430.6,
+      "memory_percent": 1.32,
+      "exe": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26050.15-0\\MsMpEng.exe",
+      "cmdline": null,
+      "create_time": 1781716838.5264292,
+      "connections": [],
+      "risk_flags": [
+        "high_ram",
+        "unusual_path"
+      ],
+      "risk_score": 35,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 41876,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 316.95,
+      "memory_percent": 0.97,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe c:\\Users\\Gabriel\\.vscode\\extensions\\ms-python.vscode-pylance-2026.2.1\\dist\\server.bundle.js --cancellationReceive=file:670e3711e23a7aeaf4d9a0653eeae3336ae7e140a0 --node-ipc --clientProcessId=37228",
+      "create_time": 1781721228.063425,
+      "connections": [],
+      "risk_flags": [
+        "high_ram",
+        "unusual_path"
+      ],
+      "risk_score": 35,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 0,
+      "name": "System Idle Process",
+      "username": "NT AUTHORITY\\SYSTEM",
+      "cpu_percent": 2336.4,
+      "memory_mb": 0.01,
+      "memory_percent": 0.0,
+      "exe": null,
+      "cmdline": null,
+      "create_time": 0.0,
+      "connections": [],
+      "risk_flags": [
+        "high_cpu",
+        "executable_path_unavailable"
+      ],
+      "risk_score": 30,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 5928,
+      "name": "avp.exe",
+      "username": null,
+      "cpu_percent": 1.7,
+      "memory_mb": 37.53,
+      "memory_percent": 0.11,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky 21.25\\avp.exe",
+      "cmdline": null,
+      "create_time": 1781716838.5077205,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:49679",
+          "remote_address": "127.0.0.1:49680",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:49683",
+          "remote_address": "185.201.1.226:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:49680",
+          "remote_address": "127.0.0.1:49679",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 5980,
+      "name": "kpm_service.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 33.1,
+      "memory_percent": 0.1,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky Password Manager 25.1\\kpm_service.exe",
+      "cmdline": null,
+      "create_time": 1781716838.5117843,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:26420",
+          "remote_address": "82.202.185.148:443",
+          "status": "CLOSE_WAIT"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 19432,
+      "name": "iCloudHome.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 111.99,
+      "memory_percent": 0.34,
+      "exe": "C:\\Program Files\\WindowsApps\\AppleInc.iCloud_15.8.127.0_x64__nzyj5cx40ttqa\\iCloud\\iCloudHome.exe",
+      "cmdline": "iCloudHome-AppX.exe",
+      "create_time": 1781717689.1669393,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:14984",
+          "remote_address": "17.157.64.66:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:14980",
+          "remote_address": "2620:149:1369::b:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "192.168.1.6:14987",
+          "remote_address": "17.157.64.66:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:14979",
+          "remote_address": "2620:149:1369::b:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:14982",
+          "remote_address": "2620:149:1369::b:443",
+          "status": "CLOSE_WAIT"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 20604,
+      "name": "NVIDIA Overlay.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 34.01,
+      "memory_percent": 0.1,
+      "exe": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe",
+      "cmdline": "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\CEF\\NVIDIA Overlay.exe --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --no-sandbox --start-stack-profiler --user-data-dir=C:\\Users\\Gabriel\\AppData\\Local\\NVIDIA Corporation\\NVIDIA Overlay\\CefCache --field-trial-handle=2976,i,12222575492474146278,17188637529811914493,262144 --variations-seed-version --enable-logging=handle --log-file=2060 --mojo-platform-channel-handle=2560 /prefetch:11",
+      "create_time": 1781716846.5306208,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:12177",
+          "remote_address": "72.25.64.2:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:12164",
+          "remote_address": "2803:f800:53::3:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 25240,
+      "name": "steam.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.7,
+      "memory_mb": 82.71,
+      "memory_percent": 0.25,
+      "exe": "C:\\Program Files (x86)\\Steam\\steam.exe",
+      "cmdline": "C:\\Program Files (x86)\\Steam\\steam.exe -silent",
+      "create_time": 1781716857.7125568,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:12261",
+          "remote_address": "155.133.255.100:27020",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12184",
+          "remote_address": "127.0.0.1:12201",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12186",
+          "remote_address": "127.0.0.1:12200",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 27048,
+      "name": "kpm.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.7,
+      "memory_mb": 168.38,
+      "memory_percent": 0.52,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky Password Manager 25.1\\kpm.exe",
+      "cmdline": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky Password Manager 25.1\\kpm.exe autoStart",
+      "create_time": 1781716861.156373,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:12230",
+          "remote_address": "127.0.0.1:12231",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:26389",
+          "remote_address": "37.203.128.51:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:12233",
+          "remote_address": "212.73.235.47:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "127.0.0.1:12231",
+          "remote_address": "127.0.0.1:12230",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:26403",
+          "remote_address": "185.201.1.99:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "192.168.1.6:26390",
+          "remote_address": "37.203.128.51:443",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 32656,
+      "name": "APSDaemon.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 22.41,
+      "memory_percent": 0.07,
+      "exe": "C:\\Program Files\\WindowsApps\\AppleInc.iCloud_15.8.127.0_x64__nzyj5cx40ttqa\\iCloud\\APSDaemon.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\AppleInc.iCloud_15.8.127.0_x64__nzyj5cx40ttqa\\iCloud\\APSDaemon.exe -Embedding",
+      "create_time": 1781717688.3792884,
+      "connections": [
+        {
+          "local_address": "192.168.1.6:14995",
+          "remote_address": "17.249.252.4:5223",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 33044,
+      "name": "ksde.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 16.62,
+      "memory_percent": 0.05,
+      "exe": "C:\\Program Files (x86)\\Kaspersky Lab\\Kaspersky VPN 5.25\\ksde.exe",
+      "cmdline": null,
+      "create_time": 1781716963.047111,
+      "connections": [
+        {
+          "local_address": "127.0.0.1:14120",
+          "remote_address": "127.0.0.1:14121",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:14122",
+          "remote_address": "81.19.104.102:443",
+          "status": "ESTABLISHED"
+        },
+        {
+          "local_address": "192.168.1.6:26452",
+          "remote_address": "82.202.184.193:443",
+          "status": "CLOSE_WAIT"
+        },
+        {
+          "local_address": "127.0.0.1:14121",
+          "remote_address": "127.0.0.1:14120",
+          "status": "ESTABLISHED"
+        }
+      ],
+      "risk_flags": [
+        "external_network_connection"
+      ],
+      "risk_score": 25,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 1964,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 30.14,
+      "memory_percent": 0.09,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=crashpad-handler --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code /prefetch:4 --no-rate-limit --monitor-self-annotation=ptype=crashpad-handler --database=C:\\Users\\Gabriel\\AppData\\Roaming\\Code\\Crashpad --url=appcenter://code?aid=a4e3233c-699c-46ec-b4f4-9c2a77254662&uid=847b24f0-816a-4f1d-aca9-78ce3fe1c916&iid=847b24f0-816a-4f1d-aca9-78ce3fe1c916&sid=847b24f0-816a-4f1d-aca9-78ce3fe1c916 --annotation=_companyName=Microsoft --annotation=_productName=VSCode --annotation=_version=1.124.2 --annotation=plat=Win64 --annotation=prod=Electron --annotation=ver=42.2.0 --initial-client-data=0x4d4,0x4d8,0x4dc,0x4b4,0x4e0,0x7ff76f3e4adc,0x7ff76f3e4ae8,0x7ff76f3e4af8",
+      "create_time": 1781721219.097231,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 2952,
+      "name": "node_repl.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 11.38,
+      "memory_percent": 0.03,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a89897d3d9baa117\\bin\\node_repl.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a89897d3d9baa117\\bin\\node_repl.exe",
+      "create_time": 1781724652.0495484,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 3728,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 111.41,
+      "memory_percent": 0.34,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=gpu-process --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --gpu-preferences=SAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --field-trial-handle=1768,i,6153041314166883791,1503029439126355094,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1776,i,607835451813549326,16384436871907733952,4 --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=1760 /prefetch:2",
+      "create_time": 1781721219.161333,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 6020,
+      "name": "MpDefenderCoreService.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 23.65,
+      "memory_percent": 0.07,
+      "exe": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26050.15-0\\MpDefenderCoreService.exe",
+      "cmdline": null,
+      "create_time": 1781716838.5135758,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 12388,
+      "name": "OpenConsole.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 11.4,
+      "memory_percent": 0.03,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\node_modules\\node-pty\\build\\Release\\conpty\\OpenConsole.exe",
+      "cmdline": "c:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\node_modules\\node-pty\\build\\Release\\conpty\\OpenConsole.exe --headless --inheritcursor --width 80 --height 30 --signal 0x588 --server 0x558",
+      "create_time": 1781721220.8393283,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 15928,
+      "name": "OpenConsole.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 11.41,
+      "memory_percent": 0.03,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\node_modules\\node-pty\\build\\Release\\conpty\\OpenConsole.exe",
+      "cmdline": "c:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\node_modules\\node-pty\\build\\Release\\conpty\\OpenConsole.exe --headless --inheritcursor --width 80 --height 30 --signal 0x5c8 --server 0x5c0",
+      "create_time": 1781721220.8702807,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 16656,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 290.34,
+      "memory_percent": 0.89,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=renderer --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --app-user-model-id=Microsoft.VisualStudioCode --app-path=C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app --enable-sandbox --enable-blink-features=HighlightAPI --max-active-webgl-contexts=32 --disable-blink-features=FontMatchingCTMigration,StandardizedBrowserZoom, --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=4 --time-ticks-at-unix-epoch=-1781716823190291 --launch-time-ticks=4396145002 --field-trial-handle=1768,i,6153041314166883791,1503029439126355094,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1776,i,607835451813549326,16384436871907733952,4 --trace-process-track-uuid=3190708990060038890 --mojo-platform-channel-handle=3516 --vscode-window-config=vscode:63f6d705-a936-4081-aece-ae4c8785477b /prefetch:1",
+      "create_time": 1781721219.3400788,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 22856,
+      "name": "NisSrv.exe",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 15.21,
+      "memory_percent": 0.05,
+      "exe": "C:\\ProgramData\\Microsoft\\Windows Defender\\Platform\\4.18.26050.15-0\\NisSrv.exe",
+      "cmdline": null,
+      "create_time": 1781716848.4714892,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 36136,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 138.37,
+      "memory_percent": 0.42,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "create_time": 1781721218.5254889,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 36640,
+      "name": "OpenConsole.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 11.41,
+      "memory_percent": 0.03,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\node_modules\\node-pty\\build\\Release\\conpty\\OpenConsole.exe",
+      "cmdline": "c:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\node_modules\\node-pty\\build\\Release\\conpty\\OpenConsole.exe --headless --inheritcursor --width 223 --height 8 --signal 0x5d8 --server 0x5d0",
+      "create_time": 1781721220.880118,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 37112,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 87.17,
+      "memory_percent": 0.27,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1768,i,6153041314166883791,1503029439126355094,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1776,i,607835451813549326,16384436871907733952,4 --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=3112 /prefetch:14",
+      "create_time": 1781721220.078402,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 37496,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.7,
+      "memory_mb": 107.99,
+      "memory_percent": 0.33,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1768,i,6153041314166883791,1503029439126355094,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1776,i,607835451813549326,16384436871907733952,4 --trace-process-track-uuid=3190708992871164437 --mojo-platform-channel-handle=3920 /prefetch:14",
+      "create_time": 1781721220.1940265,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 37568,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 91.49,
+      "memory_percent": 0.28,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe --type=utility --utility-sub-type=node.mojom.NodeService --lang=en-US --service-sandbox-type=none --video-capture-use-gpu-memory-buffer --user-data-dir=C:\\Users\\Gabriel\\AppData\\Roaming\\Code --standard-schemes=vscode-webview,vscode-file --enable-sandbox --secure-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --cors-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --fetch-schemes=vscode-webview,vscode-file,vscode-remote-resource,vscode-managed-remote-resource --service-worker-schemes=vscode-webview --code-cache-schemes=vscode-webview,vscode-file --field-trial-handle=1768,i,6153041314166883791,1503029439126355094,262144 --enable-features=DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync --disable-features=CalculateNativeWinOcclusion,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=1776,i,607835451813549326,16384436871907733952,4 --trace-process-track-uuid=3190708993808206286 --mojo-platform-channel-handle=3888 /prefetch:14",
+      "create_time": 1781721220.2110815,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 38232,
+      "name": "node_repl.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 9.87,
+      "memory_percent": 0.03,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a89897d3d9baa117\\bin\\node_repl.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a89897d3d9baa117\\bin\\node_repl.exe",
+      "create_time": 1781721679.675267,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 38936,
+      "name": "OpenConsole.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 11.4,
+      "memory_percent": 0.03,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\node_modules\\node-pty\\build\\Release\\conpty\\OpenConsole.exe",
+      "cmdline": "c:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\node_modules\\node-pty\\build\\Release\\conpty\\OpenConsole.exe --headless --inheritcursor --width 80 --height 30 --signal 0x614 --server 0x60c",
+      "create_time": 1781721220.8989232,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 39380,
+      "name": "Code.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 88.82,
+      "memory_percent": 0.27,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe c:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\extensions\\json-language-features\\server\\dist\\node\\jsonServerMain --node-ipc --clientProcessId=37228",
+      "create_time": 1781721227.42639,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 40240,
+      "name": "OpenConsole.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 11.39,
+      "memory_percent": 0.03,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\node_modules\\node-pty\\build\\Release\\conpty\\OpenConsole.exe",
+      "cmdline": "c:\\Users\\Gabriel\\AppData\\Local\\Programs\\Microsoft VS Code\\6928394f91\\resources\\app\\node_modules\\node-pty\\build\\Release\\conpty\\OpenConsole.exe --headless --width 80 --height 30 --signal 0x6d4 --server 0x6bc",
+      "create_time": 1781721223.4243567,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 49604,
+      "name": "node_repl.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 11.45,
+      "memory_percent": 0.04,
+      "exe": "C:\\Users\\Gabriel\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a89897d3d9baa117\\bin\\node_repl.exe",
+      "cmdline": "C:\\Users\\Gabriel\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a89897d3d9baa117\\bin\\node_repl.exe",
+      "create_time": 1781724699.306254,
+      "connections": [],
+      "risk_flags": [
+        "unusual_path"
+      ],
+      "risk_score": 20,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 3192,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 379.47,
+      "memory_percent": 1.16,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 11112:50230 -prefMapHandle 8208:301071 -jsInitHandle 8036:156120 -parentBuildID 20260610172436 -ipcHandle 12312 -initialChannelId {8d7054af-d24b-40dd-b69f-469627a437ee} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 7504 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 72 tab",
+      "create_time": 1781720552.1456783,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 3584,
+      "name": "MemCompression",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 1870.73,
+      "memory_percent": 5.72,
+      "exe": "MemCompression",
+      "cmdline": null,
+      "create_time": 1781716837.9619496,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 5728,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 901.52,
+      "memory_percent": 2.76,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 10792:50043 -prefMapHandle 8312:301071 -jsInitHandle 9128:156120 -parentBuildID 20260610172436 -ipcHandle 9392 -initialChannelId {445258fa-9951-4a7c-a1b4-c21018c0a93a} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 4808 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 49 tab",
+      "create_time": 1781718317.8461893,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 7516,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.8,
+      "memory_mb": 331.89,
+      "memory_percent": 1.02,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 11352:50230 -prefMapHandle 12960:301071 -jsInitHandle 12536:156120 -parentBuildID 20260610172436 -ipcHandle 5524 -initialChannelId {ac207550-f9bc-4d60-9608-2af5f0d3a750} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 1028 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 89 tab",
+      "create_time": 1781721562.5333393,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 16480,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.8,
+      "memory_mb": 400.61,
+      "memory_percent": 1.23,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 8944:50124 -prefMapHandle 1684:301071 -jsInitHandle 10544:156120 -parentBuildID 20260610172436 -ipcHandle 11808 -initialChannelId {fc65df6d-c21e-4074-9338-083ff93096e7} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 10980 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 56 tab",
+      "create_time": 1781718421.0233283,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 17424,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.7,
+      "memory_mb": 322.59,
+      "memory_percent": 0.99,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 6944:49949 -prefMapHandle 8672:301071 -jsInitHandle 9720:156120 -parentBuildID 20260610172436 -ipcHandle 10572 -initialChannelId {53bd3a25-ed00-445d-950b-14a3cacef509} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 4744 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 30 tab",
+      "create_time": 1781717222.020358,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 20152,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 647.35,
+      "memory_percent": 1.98,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 4712:46483 -prefMapHandle 4716:301071 -jsInitHandle 4720:156120 -parentBuildID 20260610172436 -ipcHandle 4728 -initialChannelId {a71f3319-0b62-432e-acc0-0fb6613a95e4} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 4736 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 5 tab",
+      "create_time": 1781716879.9340615,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 27072,
+      "name": "Codex.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 336.57,
+      "memory_percent": 1.03,
+      "exe": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.611.8604.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.611.8604.0_x64__2p2nqsd0c76g0\\app\\Codex.exe --type=renderer --standard-schemes=app --secure-schemes=app,sentry-ipc --bypasscsp-schemes=sentry-ipc --fetch-schemes=app,sentry-ipc --cors-schemes=sentry-ipc --streaming-schemes=app --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=pt-BR --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1781716823190290 --launch-time-ticks=4396670156 --metrics-shmem-handle=4400,i,195763418469019125,10322149126472501259,2097152 --field-trial-handle=2236,i,11649781863872406673,15210344292308876189,262144 --disable-features=DropInputEventsWhilePaintHolding --variations-seed-version --pseudonymization-salt-handle=2240,i,10174411548823319174,12240562206295070024,4 --trace-process-track-uuid=3190708990997080739 --mojo-platform-channel-handle=4408 /prefetch:1",
+      "create_time": 1781721219.8631809,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 29324,
+      "name": "WhatsApp.Root.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 1.4,
+      "memory_mb": 339.5,
+      "memory_percent": 1.04,
+      "exe": "C:\\Program Files\\WindowsApps\\5319275A.WhatsAppDesktop_2.2620.102.0_x64__cv1g1gvanyjgm\\WhatsApp.Root.exe",
+      "cmdline": "C:\\Program Files\\WindowsApps\\5319275A.WhatsAppDesktop_2.2620.102.0_x64__cv1g1gvanyjgm\\WhatsApp.Root.exe",
+      "create_time": 1781716883.707961,
+      "connections": [
+        {
+          "local_address": "2804:214:801a:f:e0c3:c32b:7805:817:47704",
+          "remote_address": "2a03:2880:f205:2c5:face:b00c:0:167:443",
+          "status": "CLOSE_WAIT"
+        }
+      ],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 31360,
+      "name": "msedgewebview2.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 0.0,
+      "memory_mb": 389.44,
+      "memory_percent": 1.19,
+      "exe": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\149.0.4022.69\\msedgewebview2.exe",
+      "cmdline": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\149.0.4022.69\\msedgewebview2.exe --type=renderer --noerrdialogs --user-data-dir=C:\\Users\\Gabriel\\AppData\\Local\\Packages\\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\\LocalCache\\EBWebView --webview-exe-name=WhatsApp.Root.exe --webview-exe-version=1.0.0 --embedded-browser-webview=1 --video-capture-use-gpu-memory-buffer --lang=pt-BR --js-flags=--expose-gc --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=9 --time-ticks-at-unix-epoch=-1781716823190292 --launch-time-ticks=63005804 --skip-read-main-dll --metrics-shmem-handle=5860,i,16185209221393206763,6731447973147620846,2097152 --field-trial-handle=2084,i,4088219676988972386,5363612434969159933,262144 --variations-seed-version --pseudonymization-salt-handle=2096,i,14238267624488929924,7319434244024731893,4 --trace-process-track-uuid=3190708994745248135 --mojo-platform-channel-handle=5888 /pfhostedapp:5c3ece7470d3d99350783b03cbe57ba62174e1b4 /prefetch:1",
+      "create_time": 1781716886.1988504,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 32748,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 1.4,
+      "memory_mb": 347.35,
+      "memory_percent": 1.06,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 10932:49949 -prefMapHandle 10984:301071 -jsInitHandle 6444:156120 -parentBuildID 20260610172436 -ipcHandle 9480 -initialChannelId {5210fa2a-bf7c-4d9e-b58d-76c0e0adee37} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 10392 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 31 tab",
+      "create_time": 1781717295.2944384,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 41112,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 4.1,
+      "memory_mb": 501.5,
+      "memory_percent": 1.53,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 11020:50286 -prefMapHandle 5304:301071 -jsInitHandle 12644:156120 -parentBuildID 20260610172436 -ipcHandle 11740 -initialChannelId {5e444257-ee35-475e-9f1c-8fddce3721d6} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 13108 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 90 tab",
+      "create_time": 1781722195.7035098,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 48628,
+      "name": "firefox.exe",
+      "username": "NOSLIA\\Gabriel",
+      "cpu_percent": 2.7,
+      "memory_mb": 726.03,
+      "memory_percent": 2.22,
+      "exe": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "cmdline": "C:\\Program Files\\Mozilla Firefox\\firefox.exe -contentproc -isForBrowser -prefsHandle 12024:50286 -prefMapHandle 8368:301071 -jsInitHandle 8244:156120 -parentBuildID 20260610172436 -ipcHandle 10208 -initialChannelId {0100b86e-e5cd-4df9-897b-86059d9481cd} -parentPid 28200 -crashReporter \\\\.\\pipe\\gecko-crash-server-pipe.28200 -crashHelperPid 0 -crashHelper 13024 -win32kLockedDown -appDir C:\\Program Files\\Mozilla Firefox\\browser - 93 tab",
+      "create_time": 1781722373.9035816,
+      "connections": [],
+      "risk_flags": [
+        "high_ram"
+      ],
+      "risk_score": 15,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 4,
+      "name": "System",
+      "username": "NT AUTHORITY\\SYSTEM",
+      "cpu_percent": 7.2,
+      "memory_mb": 17.07,
+      "memory_percent": 0.05,
+      "exe": "",
+      "cmdline": null,
+      "create_time": 0.0,
+      "connections": [],
+      "risk_flags": [
+        "executable_path_unavailable"
+      ],
+      "risk_score": 10,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    },
+    {
+      "pid": 332,
+      "name": "",
+      "username": null,
+      "cpu_percent": 0.0,
+      "memory_mb": 109.67,
+      "memory_percent": 0.34,
+      "exe": "",
+      "cmdline": null,
+      "create_time": 1781716823.6075587,
+      "connections": [],
+      "risk_flags": [
+        "executable_path_unavailable"
+      ],
+      "risk_score": 10,
+      "recommendation": "Verificar assinatura, caminho do executavel e reputacao do processo antes de qualquer acao corretiva."
+    }
+  ]
+}
