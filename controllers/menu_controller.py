@@ -20,34 +20,34 @@ class MenuController:
     self.opcoes = { # Dic para visualizacao
       1: " Diagnóstico rápido",
       2: " Diagnóstico completo",
-      3: " Ver processos pesados",
-      4: " Ver uso de RAM",
-      5: " Ver uso de CPU",
-      6: " Ver uso de disco",
-      7: " Ver rede",
-      8: " Startup do sistema",
-      9: " Encontrar arquivos duplicados",
-      10: "Segurança",
-      11: "Gerar relatório",
-      12: "Monitoramento em tempo real",
-      13: "Informações do Sistema",
+      3: " Informações do sistema",
+      4: " Monitoramento em tempo real",
+      5: " Processos pesados",
+      6: " Uso de CPU",
+      7: " Uso de RAM",
+      8: " Uso de disco",
+      9: " Rede e conectividade",
+      10: "Inicialização do sistema",
+      11: "Segurança",
+      12: "Arquivos duplicados",
+      13: "Gerar relatório",
       0: " Sair"
     }
     self.acoes = { # Dic para os parametros
       0: self.sair,
       1: self.diagnostico_rapido,
       2: self.diagnostico_completo,
-      3: self.processos_pesados,
-      4: self.ram,
-      5: self.cpu,
-      6: self.disco,
-      7: self.rede,
-      8: self.startup,
-      9: self.duplicados,
-      10: self.seguranca,
-      11: self.relatorio,
-      12: self.monitoramento,
-      13: self.system_info
+      3: self.system_info,
+      4: self.monitoramento,
+      5: self.processos_pesados,
+      6: self.cpu,
+      7: self.ram,
+      8: self.disco,
+      9: self.rede,
+      10: self.startup,
+      11: self.seguranca,
+      12: self.duplicados,
+      13: self.relatorio
     }
     
     self.cpu_controller = CpuController()
@@ -103,45 +103,45 @@ class MenuController:
     self.diagnostic_controller.show_full_diagnostic()
 
   #Opcao 3
+  def system_info(self):
+    self.system_controller.show_info()
+
+  #Opcao 4
+  def monitoramento(self):
+    self.monitor_controller.start()
+
+  #Opcao 5
   def processos_pesados(self):
     self.process_controller.show_heavy_processes()
 
-  #Opcao 4
-  def ram(self):
-    self.ram_controller.show_info()
-
-  #Opcao 5
+  #Opcao 6
   def cpu(self):
     self.cpu_controller.show_info()
 
-  #Opcao 6
+  #Opcao 7
+  def ram(self):
+    self.ram_controller.show_info()
+
+  #Opcao 8
   def disco(self):
     self.disk_controller.show_info()
 
-  #Opcao 7
+  #Opcao 9
   def rede(self):
     self.network_controller.show_info()
 
-  #Opcao 8
+  #Opcao 10
   def startup(self):
     self.startup_controller.show_startup_items()
 
-  #Opcao 9
-  def duplicados(self):
-    self.duplicate_controller.show_duplicates()
-
-  #Opcao 10
+  #Opcao 11
   def seguranca(self):
     self.security_controller.show_info()
 
-  #Opcao 11
+  #Opcao 12
+  def duplicados(self):
+    self.duplicate_controller.show_duplicates()
+
+  #Opcao 13
   def relatorio(self):
     self.report_controller.generate_report()
-
-  #Opcao 12
-  def monitoramento(self):
-    self.monitor_controller.start()
-  
-  #Opcao 13
-  def system_info(self):
-    self.system_controller.show_info()
