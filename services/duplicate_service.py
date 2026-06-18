@@ -10,6 +10,28 @@ from collections import defaultdict
 class DuplicateService:
   # Filtros Linux — mesmo padrão do DiskService
   SKIP_FS_PREFIXES = ("/proc", "/sys", "/dev/loop", "/snap")
+  WINDOWS_PROTECTED_DIRS = (
+    "\\windows\\",
+    "\\program files\\",
+    "\\program files (x86)\\",
+    "\\programdata\\",
+    "\\appdata\\local\\microsoft\\windows\\",
+    "\\appdata\\roaming\\microsoft\\windows\\"
+  )
+  LINUX_PROTECTED_DIRS = (
+    "/bin/",
+    "/boot/",
+    "/dev/",
+    "/etc/",
+    "/lib/",
+    "/lib64/",
+    "/proc/",
+    "/run/",
+    "/sbin/",
+    "/snap/",
+    "/sys/",
+    "/usr/"
+  )
 
   def __init__(self):
     self.system_service = SystemService()
@@ -52,6 +74,9 @@ class DuplicateService:
       to_move = sorted_files[1:]
 
       for file in to_move:
+        if self._is_protected_path(file.path):
+          continue
+
         filename = os.path.basename(file.path)
         dest = os.path.join(quarantine_path, filename)
         dest = self._safe_dest(dest)  # evita colisão de nomes
@@ -75,6 +100,8 @@ class DuplicateService:
     records = []
     for dirpath, _, filenames in os.walk(root):
       if self.os_type == "Linux" and self._should_skip(dirpath):
+        continue
+      if self.os_type == "Windows" and self._is_protected_path(dirpath):
         continue
       for fname in filenames:
         path = os.path.join(dirpath, fname)
@@ -109,7 +136,7 @@ class DuplicateService:
       if len(files) >= 2
     ]
 
-  def _hash_file(self, path: str, chunk_size: int = 65536) -> str | None:
+  def _hash_file(self, path: str, chunk_size: int = 65536):
     """SHA256 do arquivo. Retorna None em caso de erro de leitura."""
     h = hashlib.sha256()
     try:
@@ -122,6 +149,15 @@ class DuplicateService:
 
   def _should_skip(self, dirpath: str) -> bool:
     return any(dirpath.startswith(prefix) for prefix in self.SKIP_FS_PREFIXES)
+
+  def _is_protected_path(self, path: str) -> bool:
+    if self.os_type == "Windows":
+      normalized = os.path.abspath(path).replace("/", "\\").lower()
+      return any(protected in normalized for protected in self.WINDOWS_PROTECTED_DIRS)
+
+    normalized = path if path.startswith("/") else os.path.abspath(path)
+    normalized = normalized.replace("\\", "/").lower()
+    return any(normalized.startswith(protected) for protected in self.LINUX_PROTECTED_DIRS)
 
   def _safe_dest(self, dest: str) -> str:
     """Evita sobrescrever arquivos na quarentena com mesmo nome."""

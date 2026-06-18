@@ -40,5 +40,8 @@ class DuplicateController:
     elif action == "quarantine":
       dest = self.view.ask_quarantine_path()
       if dest:
+        if not self.view.confirm_quarantine():
+          self.view.show_message("\nOperação cancelada.")
+          return
         moved = self.service.move_to_quarantine(groups, dest)
         self.view.show_message(f"\n{len(moved)} arquivo(s) movido(s) para quarentena: {dest}")

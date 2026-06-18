@@ -4,7 +4,7 @@ import os
 
 class DuplicateView(BaseView):
 
-    def ask_scope(self) -> str | None:
+    def ask_scope(self):
       self.print_title("ENCONTRAR DUPLICATAS", 50)
       print("\n1 - Diretório específico")
       print("2 - Disco/partição inteira")
@@ -16,7 +16,7 @@ class DuplicateView(BaseView):
         return "disk"
       return None
 
-    def ask_path(self) -> str | None:
+    def ask_path(self):
       path = input("\nCaminho do diretório: ").strip()
       if not os.path.exists(path):
         self.show_message(f"\nCaminho não encontrado: {path}")
@@ -45,7 +45,7 @@ class DuplicateView(BaseView):
         for file in group.files:
           print(f"  {file.path}")
 
-    def ask_action(self) -> str | None:
+    def ask_action(self):
       print("\n1 - Exportar lista (CSV)")
       print("2 - Mover duplicatas para quarentena")
       print("0 - Voltar")
@@ -56,16 +56,22 @@ class DuplicateView(BaseView):
         return "quarantine"
       return None
 
-    def ask_export_path(self) -> str | None:
+    def ask_export_path(self):
       path = input("\nDiretório para salvar o CSV: ").strip()
       if not os.path.isdir(path):
         self.show_message(f"\nDiretório inválido: {path}")
         return None
       return path
 
-    def ask_quarantine_path(self) -> str | None:
+    def ask_quarantine_path(self):
       path = input("\nDiretório de quarentena: ").strip()
       if not path:
         self.show_message("\nCaminho não informado.")
         return None
       return path
+
+    def confirm_quarantine(self) -> bool:
+      print("\nA quarentena mantém um arquivo de cada grupo e move as demais duplicatas.")
+      print("Arquivos em diretórios protegidos do sistema serão ignorados.")
+      choice = input("Digite MOVER para confirmar: ").strip()
+      return choice == "MOVER"
