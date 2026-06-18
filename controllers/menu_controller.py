@@ -10,6 +10,7 @@ from controllers.duplicate_controller import DuplicateController
 from controllers.security_controller import SecurityController
 from controllers.process_controller import ProcessController
 from controllers.monitor_controller import MonitorController
+from controllers.diagnostic_controller import DiagnosticController
 
 class MenuController:
   
@@ -58,6 +59,7 @@ class MenuController:
     self.security_controller = SecurityController()
     self.process_controller = ProcessController()
     self.monitor_controller = MonitorController()
+    self.diagnostic_controller = DiagnosticController()
 
   def iniciar(self): # Loop do menu
     clear_screen()
@@ -92,11 +94,11 @@ class MenuController:
 
   #Opcao 1
   def diagnostico_rapido(self):
-    self.menu.show_message("Diagnóstico rápido em desenvolvimento")
+    self.diagnostic_controller.show_quick_diagnostic()
 
   #Opcao 2
   def diagnostico_completo(self):
-    self.menu.show_message("Diagnóstico completo em desenvolvimento")
+    self.diagnostic_controller.show_full_diagnostic()
 
   #Opcao 3
   def processos_pesados(self):

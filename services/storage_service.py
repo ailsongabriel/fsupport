@@ -18,6 +18,17 @@ class StorageService:
 
     return str(path)
 
+  def save_text(self, category, filename, content):
+    directory = self.base_path / category
+    directory.mkdir(parents=True, exist_ok=True)
+
+    path = directory / filename
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as file:
+      file.write(content)
+
+    return str(path)
+
   def save_snapshot(self, category, timestamp, data):
     safe_timestamp = timestamp.strftime("%Y-%m-%d_%H-%M-%S")
     session_path = self.save_json(category, f"scans/{safe_timestamp}.json", data)
