@@ -60,8 +60,16 @@ class SecurityService:
           antivirus[name].active = (
             antivirus[name].active or active
           ) 
-    except Exception:
-      pass
+    except Exception as error:
+      return [AntivirusInfo(
+        name="Verificacao indisponivel",
+        active=None,
+        note=str(error)
+      )]
+
+    if not antivirus:
+      return [AntivirusInfo(name="Nenhum detectado", active=False)]
+
     return list(antivirus.values())
 
   def _get_antivirus_linux(self) -> list:
@@ -89,10 +97,12 @@ class SecurityService:
         ["netsh", "advfirewall", "show", "allprofiles", "state"],
         capture_output=True, text=True, timeout=10
       )
+      if result.returncode != 0:
+        return FirewallInfo(active=None, note=result.stderr.strip() or "Falha ao consultar netsh.")
       active = "ON" in result.stdout.upper()
       return FirewallInfo(active=active)
-    except Exception:
-      return FirewallInfo(active=None)
+    except Exception as error:
+      return FirewallInfo(active=None, note=str(error))
 
   def _get_firewall_linux(self) -> FirewallInfo:
     # Tenta ufw → firewalld → iptables

@@ -25,10 +25,13 @@ class NetworkService:
 
   def _get_local_ip(self): # Obtém o IP local do dispositivo
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # Cria um socket UDP
-    s.connect(("8.8.8.8", 80)) # Conecta a um servidor DNS público (Google) para obter o IP local
-    local_ip = s.getsockname()[0] # Obtém o IP local do socket
-    s.close()
-    return local_ip
+    try:
+      s.connect(("8.8.8.8", 80)) # Conecta a um servidor DNS público (Google) para obter o IP local
+      return s.getsockname()[0] # Obtém o IP local do socket
+    except OSError:
+      return self._get_first_interface_ip()
+    finally:
+      s.close()
   
   def _get_gateway(self):
     try:
@@ -51,6 +54,14 @@ class NetworkService:
       interfaces[iface] = ipv4s
 
     return interfaces
+
+  def _get_first_interface_ip(self):
+    interfaces = self._get_network_interfaces()
+    for ips in interfaces.values():
+      for ip in ips:
+        if not ip.startswith("127."):
+          return ip
+    return None
   
   def _get_total_network_usage(self):
     net_io = psutil.net_io_counters()

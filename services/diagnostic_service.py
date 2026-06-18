@@ -7,6 +7,7 @@ from services.security_service import SecurityService
 from services.startup_service import StartupService
 from services.storage_service import StorageService
 from services.system_service import SystemService
+from services.windows_health_service import WindowsHealthService
 
 
 class DiagnosticService:
@@ -19,6 +20,7 @@ class DiagnosticService:
     self.security_service = SecurityService()
     self.startup_service = StartupService()
     self.system_service = SystemService()
+    self.windows_health_service = WindowsHealthService()
 
   def run_quick(self):
     context = self._collect_context(include_current=True)
@@ -30,6 +32,8 @@ class DiagnosticService:
     findings.extend(self._analyze_security(context["security"]))
 
     result = self._build_result("quick", context, findings)
+    result["history_comparison"] = self._build_history_comparison("quick", result)
+    self._refresh_report_ready(result, context)
     self._save_result(result)
     return result
 
@@ -43,8 +47,11 @@ class DiagnosticService:
     findings.extend(self._analyze_security(context["security"]))
     findings.extend(self._analyze_startup(context["startup"]))
     findings.extend(self._analyze_software_and_hardware(context))
+    findings.extend(self._analyze_windows_health(context["windows_health"]))
 
     result = self._build_result("full", context, findings)
+    result["history_comparison"] = self._build_history_comparison("full", result)
+    self._refresh_report_ready(result, context)
     self._save_result(result)
     return result
 
@@ -57,6 +64,7 @@ class DiagnosticService:
       "security": None,
       "startup": None,
       "system": None,
+      "windows_health": None,
       "collection_errors": []
     }
 
@@ -69,6 +77,7 @@ class DiagnosticService:
     context["startup"] = context["startup_scan"]
     if context["startup"] is None:
       context["startup"] = self._safe_collect("startup", self._collect_startup, context)
+    context["windows_health"] = self._safe_collect("windows_health", self._collect_windows_health, context)
     return context
 
   def _safe_collect(self, name, collector, context):
@@ -128,13 +137,15 @@ class DiagnosticService:
         {
           "name": antivirus.name,
           "active": antivirus.active,
-          "up_to_date": antivirus.up_to_date
+          "up_to_date": antivirus.up_to_date,
+          "note": antivirus.note
         }
         for antivirus in security.antivirus_list
       ],
       "firewall": {
         "active": security.firewall.active,
-        "profiles": security.firewall.profiles
+        "profiles": security.firewall.profiles,
+        "note": security.firewall.note
       }
     }
 
@@ -165,6 +176,9 @@ class DiagnosticService:
       "review_items": []
     }
 
+  def _collect_windows_health(self):
+    return self.windows_health_service.get_health_info()
+
   def _analyze_monitoring(self, monitoring, quick):
     if not monitoring:
       return [self._finding(
@@ -172,7 +186,7 @@ class DiagnosticService:
         "monitoring",
         "Sem dados de monitoramento",
         "Execute o monitoramento em tempo real antes do diagnostico para avaliar picos e medias.",
-        "Rodar a opcao 12 por alguns minutos e repetir o diagnostico.",
+        "Rodar a opcao 4 por alguns minutos e repetir o diagnostico.",
         "software"
       )]
 
@@ -237,7 +251,7 @@ class DiagnosticService:
         "processes",
         "Sem varredura de processos",
         "Nao ha coleta salva de processos pesados/suspeitos.",
-        "Rodar a opcao 3 antes do diagnostico para identificar processos que pesam CPU, RAM ou rede.",
+        "Rodar a opcao 5 antes do diagnostico para identificar processos que pesam CPU, RAM ou rede.",
         "software"
       )]
 
@@ -366,7 +380,7 @@ class DiagnosticService:
         "performance",
         "CPU alta no momento do diagnostico",
         f"Uso atual de CPU em {cpu.get('usage')}%.",
-        "Cruzar com a opcao 3 para identificar o processo causador.",
+        "Cruzar com a opcao 5 para identificar o processo causador.",
         "software"
       ))
 
@@ -400,6 +414,18 @@ class DiagnosticService:
     findings = []
     antivirus = security.get("antivirus", [])
     active_av = [item for item in antivirus if item.get("active")]
+    unavailable_av = [item for item in antivirus if item.get("active") is None]
+    if unavailable_av:
+      findings.append(self._finding(
+        "warning",
+        "security",
+        "Verificacao de antivirus indisponivel",
+        "Nao foi possivel confirmar o estado do antivirus nesta maquina.",
+        "Executar a ferramenta com permissao adequada e validar manualmente o Windows Security ou solucao instalada.",
+        "security"
+      ))
+      return findings
+
     if not active_av:
       findings.append(self._finding(
         "warning",
@@ -411,6 +437,16 @@ class DiagnosticService:
       ))
 
     firewall = security.get("firewall", {})
+    if firewall.get("active") is None:
+      findings.append(self._finding(
+        "warning",
+        "security",
+        "Verificacao de firewall indisponivel",
+        "Nao foi possivel confirmar o estado do firewall.",
+        "Validar manualmente o firewall do sistema antes de concluir a revisao de seguranca.",
+        "security"
+      ))
+
     if firewall.get("active") is False:
       findings.append(self._finding(
         "warning",
@@ -523,18 +559,62 @@ class DiagnosticService:
 
     return findings
 
+  def _analyze_windows_health(self, windows_health):
+    if not windows_health:
+      return []
+
+    findings = []
+    uptime_days = windows_health.get("uptime_days")
+    if uptime_days is not None and uptime_days >= 14:
+      findings.append(self._finding(
+        "info",
+        "reliability",
+        "Sistema sem reiniciar ha muitos dias",
+        f"Uptime atual de {uptime_days} dia(s).",
+        "Reiniciar em janela segura antes de investigar lentidao persistente ou atualizacoes pendentes.",
+        "software"
+      ))
+
+    hotfix = windows_health.get("latest_hotfix") or {}
+    hotfix_age = hotfix.get("age_days")
+    if hotfix_age is not None and hotfix_age >= 45:
+      findings.append(self._finding(
+        "warning",
+        "security",
+        "Windows possivelmente desatualizado",
+        f"Hotfix mais recente ha {hotfix_age} dia(s): {hotfix.get('id', 'N/A')}.",
+        "Verificar Windows Update e aplicar atualizacoes pendentes conforme politica do ambiente.",
+        "security"
+      ))
+
+    critical_events = windows_health.get("critical_events_7d")
+    if critical_events:
+      findings.append(self._finding(
+        "warning",
+        "reliability",
+        "Eventos criticos recentes no Windows",
+        f"{critical_events} evento(s) critico(s) no log System nos ultimos 7 dias.",
+        "Abrir Visualizador de Eventos e revisar origem dos eventos criticos antes de concluir o atendimento.",
+        "software"
+      ))
+
+    return findings
+
   def _build_result(self, diagnostic_type, context, findings):
     generated_at = datetime.now()
     findings = self._deduplicate_findings(findings)
     status = self._build_status(findings)
     actions = self._build_actions(findings)
+    health_score = self._build_health_score(findings, context)
     result = {
       "type": diagnostic_type,
       "generated_at": generated_at.isoformat(timespec="seconds"),
       "status": status,
       "summary": self._build_summary(status, findings),
+      "health_score": health_score,
       "findings": findings,
       "recommended_actions": actions,
+      "support_checklist": self._build_support_checklist(status, findings),
       "data_sources": {
         "monitoring_latest_session": context["monitoring"] is not None,
         "processes_latest_scan": context["processes"] is not None,
@@ -542,7 +622,8 @@ class DiagnosticService:
         "current_resources": context["current"] is not None,
         "security": context["security"] is not None,
         "startup": context["startup"] is not None,
-        "system": context["system"] is not None
+        "system": context["system"] is not None,
+        "windows_health": context["windows_health"] is not None
       },
       "collection_errors": context["collection_errors"],
       "report_ready": {
@@ -552,6 +633,10 @@ class DiagnosticService:
     result["report_ready"]["markdown"] = self._build_markdown(result, context)
     result["report_ready"]["text"] = self._build_text(result)
     return result
+
+  def _refresh_report_ready(self, result, context):
+    result["report_ready"]["markdown"] = self._build_markdown(result, context)
+    result["report_ready"]["text"] = self._build_text(result)
 
   def _build_status(self, findings):
     severities = [finding["severity"] for finding in findings]
@@ -576,7 +661,152 @@ class DiagnosticService:
         "priority": finding["severity"],
         "action": finding["recommendation"]
       })
-    return actions
+    priority_order = {"critical": 0, "warning": 1, "info": 2}
+    return sorted(actions, key=lambda action: priority_order.get(action["priority"], 3))
+
+  def _build_health_score(self, findings, context):
+    score = 100
+    breakdown = {
+      "performance": 100,
+      "storage": 100,
+      "security": 100,
+      "reliability": 100
+    }
+    penalties = {
+      "critical": 20,
+      "warning": 10,
+      "info": 4
+    }
+    category_map = {
+      "performance": "performance",
+      "cleanup": "storage",
+      "security": "security",
+      "monitoring": "reliability",
+      "processes": "reliability",
+      "startup": "performance",
+      "hardware": "performance",
+      "network": "reliability",
+      "reliability": "reliability"
+    }
+
+    for finding in findings:
+      penalty = penalties.get(finding["severity"], 0)
+      score -= penalty
+      area = category_map.get(finding["category"], "reliability")
+      breakdown[area] = max(0, breakdown[area] - penalty)
+
+    missing_sources = [
+      available
+      for available in [
+        context.get("monitoring") is not None,
+        context.get("processes") is not None,
+        context.get("security") is not None
+      ]
+      if not available
+    ]
+    missing_penalty = len(missing_sources) * 3
+    score -= missing_penalty
+    breakdown["reliability"] = max(0, breakdown["reliability"] - missing_penalty)
+
+    final_score = max(0, min(100, score))
+    return {
+      "score": final_score,
+      "grade": self._grade_health_score(final_score),
+      "breakdown": breakdown
+    }
+
+  def _grade_health_score(self, score):
+    if score >= 90:
+      return "excellent"
+    if score >= 75:
+      return "good"
+    if score >= 60:
+      return "attention"
+    return "critical"
+
+  def _build_support_checklist(self, status, findings):
+    checklist = [
+      {
+        "item": "Confirmar com o usuario o sintoma principal, quando começou e se ocorre sempre.",
+        "priority": "critical" if status == "attention_required" else "warning"
+      },
+      {
+        "item": "Executar monitoramento por pelo menos 3 a 5 minutos durante o uso que gera lentidao.",
+        "priority": "warning"
+      },
+      {
+        "item": "Registrar processos de maior CPU/RAM antes de fechar programas ou reiniciar.",
+        "priority": "warning"
+      },
+      {
+        "item": "Validar backup antes de mover, remover ou limpar arquivos.",
+        "priority": "critical"
+      }
+    ]
+
+    if any(finding["category"] == "security" for finding in findings):
+      checklist.append({
+        "item": "Validar antivirus, firewall e reputacao de processos antes de remover qualquer executavel.",
+        "priority": "critical"
+      })
+
+    if any(finding["category"] == "cleanup" for finding in findings):
+      checklist.append({
+        "item": "Revisar arquivos grandes com o usuario antes de limpar disco.",
+        "priority": "warning"
+      })
+
+    return checklist
+
+  def _build_history_comparison(self, diagnostic_type, result):
+    previous = self.storage.load_json("diagnostics", f"latest_{diagnostic_type}.json")
+    if not previous:
+      return {
+        "available": False,
+        "summary": "Sem diagnostico anterior para comparacao."
+      }
+
+    previous_score = previous.get("health_score", {}).get("score")
+    current_score = result.get("health_score", {}).get("score")
+    previous_findings = len(previous.get("findings", []))
+    current_findings = len(result.get("findings", []))
+    score_delta = None
+    if previous_score is not None and current_score is not None:
+      score_delta = current_score - previous_score
+
+    return {
+      "available": True,
+      "previous_generated_at": previous.get("generated_at"),
+      "previous_status": previous.get("status"),
+      "current_status": result.get("status"),
+      "previous_score": previous_score,
+      "current_score": current_score,
+      "score_delta": score_delta,
+      "previous_findings": previous_findings,
+      "current_findings": current_findings,
+      "findings_delta": current_findings - previous_findings,
+      "summary": self._build_history_summary(score_delta, current_findings - previous_findings)
+    }
+
+  def _build_history_summary(self, score_delta, findings_delta):
+    parts = []
+    if score_delta is None:
+      parts.append("Pontuacao anterior indisponivel.")
+    elif score_delta > 0:
+      parts.append(f"Pontuacao melhorou {score_delta} ponto(s).")
+    elif score_delta < 0:
+      parts.append(f"Pontuacao piorou {abs(score_delta)} ponto(s).")
+    else:
+      parts.append("Pontuacao ficou estavel.")
+
+    if findings_delta > 0:
+      parts.append(f"{findings_delta} achado(s) a mais.")
+    elif findings_delta < 0:
+      parts.append(f"{abs(findings_delta)} achado(s) a menos.")
+    else:
+      parts.append("Quantidade de achados estavel.")
+
+    return " ".join(parts)
 
   def _deduplicate_findings(self, findings):
     unique = []
@@ -651,6 +881,7 @@ class DiagnosticService:
       "",
       f"Gerado em: {result['generated_at']}",
       f"Status: {result['status']}",
+      f"Saude: {result['health_score']['score']}/100 ({result['health_score']['grade']})",
       "",
       "## Resumo",
       "",
@@ -675,6 +906,20 @@ class DiagnosticService:
       lines.extend(["Nenhum achado relevante.", ""])
 
     lines.extend([
+      "## Checklist de suporte",
+      ""
+    ])
+
+    for item in result["support_checklist"]:
+      lines.append(f"- [{item['priority']}] {item['item']}")
+
+    comparison = result.get("history_comparison", {})
+    lines.extend([
+      "",
+      "## Comparacao com diagnostico anterior",
+      "",
+      comparison.get("summary", "Sem comparacao disponivel."),
+      "",
       "## Fontes de dados",
       "",
       f"- Monitoramento: {'sim' if result['data_sources']['monitoring_latest_session'] else 'nao'}",
@@ -683,6 +928,7 @@ class DiagnosticService:
       f"- Recursos atuais: {'sim' if result['data_sources']['current_resources'] else 'nao'}",
       f"- Seguranca: {'sim' if result['data_sources']['security'] else 'nao'}",
       f"- Inicializacao: {'sim' if result['data_sources']['startup'] else 'nao'}",
+      f"- Saude do Windows: {'sim' if result['data_sources']['windows_health'] else 'nao'}",
       ""
     ])
 
@@ -703,6 +949,7 @@ class DiagnosticService:
   def _build_text(self, result):
     lines = [
       result["summary"],
+      f"Saude: {result['health_score']['score']}/100 ({result['health_score']['grade']})",
       "",
       "Achados:"
     ]

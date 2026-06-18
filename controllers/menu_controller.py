@@ -78,6 +78,11 @@ class MenuController:
       clear_screen()
 
   def processar_opcao(self, opcao): # Processa a opcao escolhida
+    if opcao is None:
+      self.menu.show_message("Opção inválida. Digite apenas o número da opção.")
+      self.menu.pause()
+      return
+
     acao = self.acoes.get(opcao)
 
     if acao:

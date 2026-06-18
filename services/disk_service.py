@@ -20,7 +20,6 @@ class DiskService:
         usage = psutil.disk_usage(partition.mountpoint)
       except Exception:
           continue
-      usage = psutil.disk_usage(partition.mountpoint)
       total = usage.total
       used = usage.used
       free = usage.free

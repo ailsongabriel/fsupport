@@ -18,8 +18,11 @@ _  __╱       ____╱ ╱╱ ╱_╱ ╱__  ╱_╱ ╱_  ╱_╱ ╱ ╱_╱ �
       self.show_message(f"{opcao} - {nome}")
 
   def get_option(self):
-    opcao = int(input("\nDigite a opcao desejada:"))
-    return opcao
+    value = input("\nDigite a opcao desejada: ").strip()
+    try:
+      return int(value)
+    except ValueError:
+      return None
   
   def close_banner(self):
     print(r"""

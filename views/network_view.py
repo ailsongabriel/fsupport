@@ -34,6 +34,8 @@ class NetworkView(BaseView):
 
     if network_info.public_ip:
       print(f"IP Público  = {network_info.public_ip}")
+    else:
+      print("IP Público  = indisponível")
 
     self.print_subtitle("Interfaces de Rede", width)
 

@@ -8,6 +8,7 @@ class DiagnosticView(BaseView):
     lines = [
       f"Gerado em        = {result['generated_at']}",
       f"Status           = {result['status']}",
+      f"Saude            = {result['health_score']['score']}/100 ({result['health_score']['grade']})",
       f"Resumo           = {result['summary']}",
       f"Arquivo latest   = {result['saved_paths']['latest']}",
       f"Historico        = {result['saved_paths']['history']}"
@@ -17,7 +18,11 @@ class DiagnosticView(BaseView):
     self.print_title(title, width)
     print(f"Gerado em        = {result['generated_at']}")
     print(f"Status           = {result['status']}")
+    print(f"Saude            = {result['health_score']['score']}/100 ({result['health_score']['grade']})")
     print(f"Resumo           = {result['summary']}")
+
+    self.print_subtitle("Comparacao historica", width)
+    print(result.get("history_comparison", {}).get("summary", "Sem comparacao disponivel."))
 
     self.print_subtitle("Fontes usadas", width)
     for source, available in result["data_sources"].items():
@@ -37,9 +42,13 @@ class DiagnosticView(BaseView):
       for error in result["collection_errors"]:
         print(f"{error['source']} = {error['error']}")
 
+    self.print_subtitle("Checklist de suporte", width)
+    for item in result["support_checklist"]:
+      print(f"[{item['priority'].upper()}] {item['item']}")
+
     self.print_subtitle("Pronto para relatorio", width)
     print(f"JSON latest      = {result['saved_paths']['latest']}")
     print(f"JSON historico   = {result['saved_paths']['history']}")
     print(f"Markdown latest  = {result['saved_paths']['markdown_latest']}")
     print(f"Texto latest     = {result['saved_paths']['text_latest']}")
-    print("O PDF podera ser gerado pela opcao 11 a partir do Markdown.")
+    print("O PDF podera ser gerado pela opcao 13 a partir do diagnostico salvo.")

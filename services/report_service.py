@@ -85,6 +85,9 @@ class ReportService:
       "diagnostic_generated_at": diagnostic.get("generated_at"),
       "status": diagnostic.get("status", "unknown"),
       "summary": diagnostic.get("summary", "Sem resumo disponivel."),
+      "health_score": diagnostic.get("health_score", {}),
+      "history_comparison": diagnostic.get("history_comparison", {}),
+      "support_checklist": diagnostic.get("support_checklist", []),
       "tasks_done": self._build_tasks_done(data_sources),
       "findings": findings,
       "actions": actions,
@@ -102,7 +105,8 @@ class ReportService:
       "current_resources": "Verificacao atual de CPU, RAM e disco",
       "security": "Verificacao de antivirus e firewall",
       "startup": "Revisao de itens de inicializacao",
-      "system": "Identificacao do sistema operacional e maquina"
+      "system": "Identificacao do sistema operacional e maquina",
+      "windows_health": "Verificacao de saude do Windows, atualizacoes e eventos criticos"
     }
 
     tasks = []
@@ -121,6 +125,7 @@ class ReportService:
       f"Gerado em: {report['generated_at']}",
       f"Diagnostico usado: {report['diagnostic_type']}",
       f"Status: {report['status']}",
+      f"Saude: {report['health_score'].get('score', 'N/A')}/100 ({report['health_score'].get('grade', 'unknown')})",
       "",
       "## Resumo",
       "",
@@ -165,6 +170,13 @@ class ReportService:
       for error in report["collection_errors"]:
         lines.append(f"- {error['source']}: {error['error']}")
 
+    lines.extend(["", "## Checklist de suporte", ""])
+    for item in report["support_checklist"]:
+      lines.append(f"- [{item['priority']}] {item['item']}")
+
+    lines.extend(["", "## Comparacao historica", ""])
+    lines.append(report["history_comparison"].get("summary", "Sem comparacao disponivel."))
+
     lines.extend([
       "",
       "## Arquivos",
@@ -181,6 +193,7 @@ class ReportService:
       f"Gerado em: {report['generated_at']}",
       f"Diagnostico usado: {report['diagnostic_type']}",
       f"Status: {report['status']}",
+      f"Saude: {report['health_score'].get('score', 'N/A')}/100 ({report['health_score'].get('grade', 'unknown')})",
       "",
       "Resumo:",
       report["summary"],
@@ -211,6 +224,13 @@ class ReportService:
       lines.append("- Manter atualizacoes do sistema e softwares em dia.")
       lines.append("- Repetir monitoramento caso o usuario relate lentidao novamente.")
 
+    lines.extend(["", "Checklist de suporte:"])
+    for item in report["support_checklist"]:
+      lines.append(f"- [{item['priority']}] {item['item']}")
+
+    lines.extend(["", "Comparacao historica:"])
+    lines.append(report["history_comparison"].get("summary", "Sem comparacao disponivel."))
+
     return "\n".join(lines)
 
   def _save_pdf(self, filename, report):
@@ -235,12 +255,20 @@ class ReportService:
     story.append(Paragraph(f"Gerado em: {report['generated_at']}", styles["Small"]))
     story.append(Paragraph(f"Diagnostico usado: {report['diagnostic_type']}", styles["Small"]))
     story.append(Paragraph(f"Status: {report['status']}", styles["Small"]))
+    story.append(Paragraph(
+      f"Saude: {report['health_score'].get('score', 'N/A')}/100 ({report['health_score'].get('grade', 'unknown')})",
+      styles["Small"]
+    ))
     story.append(Spacer(1, 0.45 * cm))
 
     story.extend(self._section("Resumo", [report["summary"]], styles))
+    story.extend(self._section("Comparacao historica", [
+      report["history_comparison"].get("summary", "Sem comparacao disponivel.")
+    ], styles))
     story.extend(self._tasks_section(report["tasks_done"], styles))
     story.extend(self._findings_section(report["findings"], styles))
     story.extend(self._actions_section(report["actions"], styles))
+    story.extend(self._checklist_section(report["support_checklist"], styles))
 
     if report["collection_errors"]:
       errors = [
@@ -353,6 +381,17 @@ class ReportService:
 
     for action in actions:
       items.append(Paragraph(self._escape(f"[{action['priority']}] {action['action']}"), styles["Body"]))
+
+    return items
+
+  def _checklist_section(self, checklist, styles):
+    items = [Paragraph("Checklist de suporte", styles["Heading"])]
+    if not checklist:
+      items.append(Paragraph("Nenhuma acao guiada registrada.", styles["Body"]))
+      return items
+
+    for item in checklist:
+      items.append(Paragraph(self._escape(f"[{item['priority']}] {item['item']}"), styles["Body"]))
 
     return items
 
