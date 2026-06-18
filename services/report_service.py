@@ -98,6 +98,7 @@ class ReportService:
     labels = {
       "monitoring_latest_session": "Analise do monitoramento em tempo real",
       "processes_latest_scan": "Analise de processos por CPU, RAM e rede",
+      "startup_latest_scan": "Analise da coleta salva de inicializacao",
       "current_resources": "Verificacao atual de CPU, RAM e disco",
       "security": "Verificacao de antivirus e firewall",
       "startup": "Revisao de itens de inicializacao",

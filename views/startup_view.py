@@ -2,7 +2,7 @@ from views.base_view import BaseView
 
 class StartupView(BaseView):
 
-  def show_startup_items(self, startup_items):
+  def show_startup_items(self, startup_items, latest_path=None, session_path=None):
 
     lines = []
 
@@ -17,6 +17,11 @@ class StartupView(BaseView):
     width = self.get_width(lines)
 
     self.print_title("ITENS DE INICIALIZAÇÃO", width)
+
+    if latest_path and session_path:
+      print(f"Dados diagnostico = {latest_path}")
+      print(f"Historico coleta  = {session_path}")
+      self.print_separator(width)
 
     for i, item in enumerate(startup_items):
 

@@ -52,6 +52,7 @@ class DiagnosticService:
     context = {
       "monitoring": self.storage.load_json("monitoring", "latest_session.json"),
       "processes": self.storage.load_json("processes", "latest_scan.json"),
+      "startup_scan": self.storage.load_json("startup", "latest_scan.json"),
       "current": None,
       "security": None,
       "startup": None,
@@ -65,7 +66,9 @@ class DiagnosticService:
     context["system"] = self._safe_collect("system", self._collect_system, context)
     context["current"] = self._safe_collect("current", self._collect_current_resources, context)
     context["security"] = self._safe_collect("security", self._collect_security, context)
-    context["startup"] = self._safe_collect("startup", self._collect_startup, context)
+    context["startup"] = context["startup_scan"]
+    if context["startup"] is None:
+      context["startup"] = self._safe_collect("startup", self._collect_startup, context)
     return context
 
   def _safe_collect(self, name, collector, context):
@@ -137,15 +140,30 @@ class DiagnosticService:
 
   def _collect_startup(self):
     startup_items = self.startup_service.get_startup_items()
-    return [
+    items = [
       {
         "name": item.name,
         "command": item.command,
         "location": item.location,
-        "enabled": item.enabled
+        "enabled": item.enabled,
+        "startup_flags": []
       }
       for item in startup_items
     ]
+    enabled_items = [item for item in items if item["enabled"]]
+
+    return {
+      "collected_at": datetime.now().isoformat(timespec="seconds"),
+      "summary": {
+        "total_items": len(items),
+        "enabled_count": len(enabled_items),
+        "disabled_count": len(items) - len(enabled_items),
+        "review_count": 0
+      },
+      "items": items,
+      "enabled_items": enabled_items,
+      "review_items": []
+    }
 
   def _analyze_monitoring(self, monitoring, quick):
     if not monitoring:
@@ -375,18 +393,71 @@ class DiagnosticService:
     if not startup:
       return []
 
-    enabled_items = [item for item in startup if item.get("enabled")]
-    if len(enabled_items) < 10:
-      return []
+    findings = []
+    summary = startup.get("summary", {})
+    enabled_items = startup.get("enabled_items", [])
+    review_items = startup.get("review_items", [])
+    enabled_count = summary.get("enabled_count", len(enabled_items))
 
-    return [self._finding(
-      "info",
-      "startup",
-      "Muitos itens iniciando com o sistema",
-      f"{len(enabled_items)} itens habilitados na inicializacao.",
-      "Desabilitar itens nao essenciais para reduzir tempo de boot e consumo inicial de RAM.",
-      "software"
-    )]
+    if enabled_count >= 10:
+      names = self._build_startup_name_summary(enabled_items)
+      findings.append(self._finding(
+        "info",
+        "startup",
+        "Muitos itens iniciando com o sistema",
+        f"{enabled_count} itens habilitados na inicializacao. Principais: {names}.",
+        "Desabilitar itens nao essenciais para reduzir tempo de boot e consumo inicial de RAM.",
+        "software"
+      ))
+
+    performance_items = [
+      item for item in review_items
+      if "review_performance_impact" in item.get("startup_flags", [])
+    ]
+    if performance_items:
+      names = self._build_startup_name_summary(performance_items)
+      findings.append(self._finding(
+        "info",
+        "startup",
+        "Itens de inicializacao com possivel impacto",
+        f"Itens que podem impactar desempenho inicial: {names}.",
+        "Revisar se estes programas precisam iniciar com o Windows ou se podem ser abertos manualmente.",
+        "software"
+      ))
+
+    unusual_items = [
+      item for item in review_items
+      if "review_unusual_startup_path" in item.get("startup_flags", [])
+    ]
+    if unusual_items:
+      names = self._build_startup_name_summary(unusual_items)
+      findings.append(self._finding(
+        "warning",
+        "security",
+        "Itens de inicializacao em caminho incomum",
+        f"Itens iniciando a partir de locais que merecem verificacao: {names}.",
+        "Validar assinatura, caminho e reputacao antes de manter estes itens na inicializacao.",
+        "security"
+      ))
+
+    return findings
+
+  def _build_startup_name_summary(self, items, limit=5):
+    names = []
+
+    for item in items:
+      name = item.get("name") or "N/A"
+      if name in names:
+        continue
+      names.append(name)
+
+      if len(names) >= limit:
+        break
+
+    if not names:
+      return "nenhum item detalhado"
+
+    return ", ".join(names)
 
   def _analyze_software_and_hardware(self, context):
     findings = []
@@ -433,6 +504,7 @@ class DiagnosticService:
       "data_sources": {
         "monitoring_latest_session": context["monitoring"] is not None,
         "processes_latest_scan": context["processes"] is not None,
+        "startup_latest_scan": context["startup_scan"] is not None,
         "current_resources": context["current"] is not None,
         "security": context["security"] is not None,
         "startup": context["startup"] is not None,
@@ -573,6 +645,7 @@ class DiagnosticService:
       "",
       f"- Monitoramento: {'sim' if result['data_sources']['monitoring_latest_session'] else 'nao'}",
       f"- Processos: {'sim' if result['data_sources']['processes_latest_scan'] else 'nao'}",
+      f"- Startup salvo: {'sim' if result['data_sources']['startup_latest_scan'] else 'nao'}",
       f"- Recursos atuais: {'sim' if result['data_sources']['current_resources'] else 'nao'}",
       f"- Seguranca: {'sim' if result['data_sources']['security'] else 'nao'}",
       f"- Inicializacao: {'sim' if result['data_sources']['startup'] else 'nao'}",
