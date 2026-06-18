@@ -97,7 +97,7 @@ class ReportService:
   def _build_tasks_done(self, data_sources):
     labels = {
       "monitoring_latest_session": "Analise do monitoramento em tempo real",
-      "processes_latest_scan": "Analise de processos por CPU, RAM e rede",
+      "processes_latest_scan": "Analise da coleta salva de processos por CPU, RAM, rede e suspeitas",
       "startup_latest_scan": "Analise da coleta salva de inicializacao",
       "current_resources": "Verificacao atual de CPU, RAM e disco",
       "security": "Verificacao de antivirus e firewall",

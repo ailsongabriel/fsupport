@@ -245,11 +245,12 @@ class DiagnosticService:
     suspicious = processes.get("suspicious_processes", [])
     if suspicious:
       top = suspicious[0]
+      evidence = self._build_process_evidence(top)
       findings.append(self._finding(
         "warning",
         "security",
         "Processos suspeitos para investigar",
-        f"{len(suspicious)} processo(s) passaram do limiar de suspeita. Principal: {top.get('name')} PID {top.get('pid')}.",
+        f"{len(suspicious)} processo(s) passaram do limiar de suspeita. Principal: {evidence}.",
         "Verificar assinatura digital, caminho do executavel, reputacao e necessidade do processo antes de remover.",
         "security"
       ))
@@ -259,7 +260,7 @@ class DiagnosticService:
       if process.get("cpu_percent", 0) >= 20
     ]
     if high_cpu:
-      names = ", ".join(process.get("name", "N/A") for process in high_cpu[:3])
+      names = self._build_process_evidence_summary(high_cpu)
       findings.append(self._finding(
         "warning",
         "performance",
@@ -274,7 +275,7 @@ class DiagnosticService:
       if process.get("memory_mb", 0) >= 500
     ]
     if high_ram:
-      names = ", ".join(process.get("name", "N/A") for process in high_ram[:3])
+      names = self._build_process_evidence_summary(high_ram)
       findings.append(self._finding(
         "warning",
         "performance",
@@ -288,7 +289,7 @@ class DiagnosticService:
       network_count = processes.get("summary", {}).get("network_processes_count", 0)
       if network_count:
         network_processes = processes.get("network_processes", [])
-        names = self._build_process_name_summary(network_processes)
+        names = self._build_process_evidence_summary(network_processes)
         findings.append(self._finding(
           "info",
           "network",
@@ -299,6 +300,39 @@ class DiagnosticService:
         ))
 
     return findings
+
+  def _build_process_evidence_summary(self, processes, limit=3):
+    if not processes:
+      return "nenhum processo detalhado"
+
+    return "; ".join([
+      self._build_process_evidence(process)
+      for process in processes[:limit]
+    ])
+
+  def _build_process_evidence(self, process):
+    parts = [
+      f"{process.get('name', 'N/A')} PID {process.get('pid', 'N/A')}",
+      f"CPU {process.get('cpu_percent', 0)}%",
+      f"RAM {process.get('memory_mb', 0)} MB"
+    ]
+
+    remote_address = self._get_first_remote_address(process)
+    if remote_address:
+      parts.append(f"remoto {remote_address}")
+
+    exe = process.get("exe")
+    if exe and process.get("risk_score", 0) > 0:
+      parts.append(f"exe {exe}")
+
+    return ", ".join(parts)
+
+  def _get_first_remote_address(self, process):
+    connections = process.get("connections", [])
+    if not connections:
+      return None
+
+    return connections[0].get("remote_address")
 
   def _build_process_name_summary(self, processes, limit=5):
     names = []

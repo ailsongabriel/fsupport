@@ -66,6 +66,7 @@ class ProcessService:
       key=lambda item: item.risk_score,
       reverse=True
     )
+    review_processes = self._build_review_processes(processes, limit)
 
     collected_at = datetime.now()
     return {
@@ -75,13 +76,58 @@ class ProcessService:
         "top_cpu_count": len(top_cpu),
         "top_ram_count": len(top_ram),
         "network_processes_count": len(network_processes),
-        "suspicious_count": len(suspicious_processes)
+        "suspicious_count": len(suspicious_processes),
+        "high_cpu_count": self._count_by_activity(processes, "high_cpu"),
+        "high_ram_count": self._count_by_activity(processes, "high_ram"),
+        "external_network_count": self._count_by_activity(processes, "external_network_connection"),
+        "review_count": len(review_processes)
       },
+      "analysis": self._build_analysis(top_cpu, top_ram, network_processes, suspicious_processes),
       "top_cpu": [process.to_dict() for process in top_cpu],
       "top_ram": [process.to_dict() for process in top_ram],
       "network_processes": [process.to_dict() for process in network_processes],
-      "suspicious_processes": [process.to_dict() for process in suspicious_processes]
+      "suspicious_processes": [process.to_dict() for process in suspicious_processes],
+      "review_processes": [process.to_dict() for process in review_processes]
     }
+
+  def _build_review_processes(self, processes, limit):
+    review_processes = [
+      process for process in processes
+      if process.activity_flags or process.risk_score >= self.SUSPICIOUS_SCORE_LIMIT
+    ]
+    return sorted(
+      review_processes,
+      key=lambda item: (item.risk_score, item.cpu_percent, item.memory_mb),
+      reverse=True
+    )[:limit]
+
+  def _build_analysis(self, top_cpu, top_ram, network_processes, suspicious_processes):
+    return {
+      "top_cpu": [self._build_process_reference(process) for process in top_cpu[:5]],
+      "top_ram": [self._build_process_reference(process) for process in top_ram[:5]],
+      "network": [self._build_process_reference(process) for process in network_processes[:5]],
+      "suspicious": [self._build_process_reference(process) for process in suspicious_processes[:5]]
+    }
+
+  def _build_process_reference(self, process):
+    first_connection = process.connections[0] if process.connections else None
+    return {
+      "pid": process.pid,
+      "name": process.name,
+      "cpu_percent": process.cpu_percent,
+      "memory_mb": process.memory_mb,
+      "exe": process.exe,
+      "risk_score": process.risk_score,
+      "activity_flags": process.activity_flags,
+      "risk_flags": process.risk_flags,
+      "remote_address": first_connection.remote_address if first_connection else None
+    }
+
+  def _count_by_activity(self, processes, activity):
+    return len([
+      process for process in processes
+      if activity in process.activity_flags
+    ])
 
   def _collect_processes(self, cpu_sample_interval):
     raw_processes = []

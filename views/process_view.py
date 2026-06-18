@@ -8,8 +8,11 @@ class ProcessView(BaseView):
     lines = [
       f"Coletado em             = {scan['collected_at']}",
       f"Processos analisados    = {summary['total_processes']}",
+      f"CPU alta                = {summary.get('high_cpu_count', 0)}",
+      f"RAM alta                = {summary.get('high_ram_count', 0)}",
       f"Com conexoes de rede    = {summary['network_processes_count']}",
       f"Suspeitas reais         = {summary['suspicious_count']}",
+      f"Para revisar            = {summary.get('review_count', 0)}",
       f"Dados para diagnostico  = {latest_path}",
       f"Historico da coleta     = {session_path}"
     ]
@@ -23,6 +26,7 @@ class ProcessView(BaseView):
     self._print_process_table("Maior uso de RAM", scan["top_ram"], width, mode="compact")
     self._print_process_table("Processos com conexao de rede", scan["network_processes"], width, mode="network")
     self._print_process_table("Suspeitas para investigar", scan["suspicious_processes"], width, mode="risk")
+    self._print_process_table("Prioridade para diagnostico", scan.get("review_processes", []), width, mode="risk")
 
   def _print_process_table(self, title, processes, width, mode="compact"):
     self.print_subtitle(title, width)
