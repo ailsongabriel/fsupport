@@ -9,6 +9,7 @@ from controllers.startup_controller import StartupController
 from controllers.duplicate_controller import DuplicateController
 from controllers.security_controller import SecurityController
 from controllers.process_controller import ProcessController
+from controllers.monitor_controller import MonitorController
 
 class MenuController:
   
@@ -56,6 +57,7 @@ class MenuController:
     self.duplicate_controller = DuplicateController()
     self.security_controller = SecurityController()
     self.process_controller = ProcessController()
+    self.monitor_controller = MonitorController()
 
   def iniciar(self): # Loop do menu
     clear_screen()
@@ -134,7 +136,7 @@ class MenuController:
 
   #Opcao 12
   def monitoramento(self):
-    self.menu.show_message("Monitoramento em tempo real em desenvolvimento")
+    self.monitor_controller.start()
   
   #Opcao 13
   def system_info(self):

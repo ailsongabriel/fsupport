@@ -24,6 +24,12 @@ class StorageService:
     latest_path = self.save_json(category, "latest_scan.json", data)
     return latest_path, session_path
 
+  def save_session(self, category, timestamp, data):
+    safe_timestamp = timestamp.strftime("%Y-%m-%d_%H-%M-%S")
+    session_path = self.save_json(category, f"sessions/{safe_timestamp}.json", data)
+    latest_path = self.save_json(category, "latest_session.json", data)
+    return latest_path, session_path
+
   def load_json(self, category, filename):
     path = self.base_path / category / filename
     if not path.exists():
