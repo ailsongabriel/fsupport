@@ -269,16 +269,35 @@ class DiagnosticService:
     if not quick:
       network_count = processes.get("summary", {}).get("network_processes_count", 0)
       if network_count:
+        network_processes = processes.get("network_processes", [])
+        names = self._build_process_name_summary(network_processes)
         findings.append(self._finding(
           "info",
           "network",
           "Processos com conexoes de rede",
-          f"{network_count} processo(s) com conexoes de rede foram registrados.",
-          "Usar esta lista como apoio; navegadores e apps de comunicacao podem ser normais.",
+          f"{network_count} processo(s) com conexoes de rede foram registrados. Principais: {names}.",
+          "Verificar apenas processos desconhecidos ou fora do esperado; navegadores e apps de comunicacao podem ser normais.",
           "security"
         ))
 
     return findings
+
+  def _build_process_name_summary(self, processes, limit=5):
+    names = []
+
+    for process in processes:
+      name = process.get("name") or "N/A"
+      if name in names:
+        continue
+      names.append(name)
+
+      if len(names) >= limit:
+        break
+
+    if not names:
+      return "nenhum processo detalhado"
+
+    return ", ".join(names)
 
   def _analyze_current_resources(self, current, quick):
     if not current:

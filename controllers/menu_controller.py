@@ -11,6 +11,7 @@ from controllers.security_controller import SecurityController
 from controllers.process_controller import ProcessController
 from controllers.monitor_controller import MonitorController
 from controllers.diagnostic_controller import DiagnosticController
+from controllers.report_controller import ReportController
 
 class MenuController:
   
@@ -60,6 +61,7 @@ class MenuController:
     self.process_controller = ProcessController()
     self.monitor_controller = MonitorController()
     self.diagnostic_controller = DiagnosticController()
+    self.report_controller = ReportController()
 
   def iniciar(self): # Loop do menu
     clear_screen()
@@ -134,7 +136,7 @@ class MenuController:
 
   #Opcao 11
   def relatorio(self):
-    self.menu.show_message("Gerar relatório em desenvolvimento")
+    self.report_controller.generate_report()
 
   #Opcao 12
   def monitoramento(self):
